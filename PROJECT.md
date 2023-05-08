@@ -13,9 +13,12 @@ My goal is to update HRnet and convert it to React.
   - [x] Add Tailwind : 
     - [x] pnpm install -D tailwindcss postcss autoprefixer
     - [x] npx tailwindcss init -p
-    - [x] tailwing.config.js : theme:colors+font
+    - [x] tailwing.config.js : theme:colors+font+container
     - [x] index.css : apply base h1,h2,h3,h4,h5
-  - [ ] Copy the old app to modern React structure
+  - [x] Home page
+    - [x] Header
+    - [x] Footer
+    - [x] Content : two CTA links create + view
   - [ ] New pages : "Create Employee" and "Employee List"
   - [ ] Add a state management system : Context
   - [ ] Modern style

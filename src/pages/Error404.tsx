@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Error404() {
+const Error404 = () => {
   return (
     <div>
       <h1>404 Error</h1>
