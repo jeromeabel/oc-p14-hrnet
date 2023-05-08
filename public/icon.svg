@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="8.4133596mm"
+   height="8.4667597mm"
+   viewBox="0 0 8.4133596 8.4667597"
+   version="1.1"
+   id="svg96939"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview96941"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="7.1358264"
+     inkscape:cx="14.504277"
+     inkscape:cy="11.56138"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="false" />
+  <defs
+     id="defs96936" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-149.6263,-153.33445)">
+    <path
+       id="path76532"
+       style="fill:#93ad18;fill-opacity:1;stroke-width:1;stop-color:#000000"
+       inkscape:transform-center-x="0.27731013"
+       inkscape:transform-center-y="-0.1514597"
+       d="m 152.18917,153.33445 a 6.8102122,6.8102122 0 0 1 -2.51317,2.41123 l -0.0497,0.0497 a 6.8102122,6.8102122 0 0 1 0.24176,1.7619 6.8102122,6.8102122 0 0 1 -4e-4,0.0105 6.8102118,6.8102118 0 0 1 4e-4,0.0105 6.8102118,6.8102118 0 0 1 -0.24176,1.7619 l 0.0497,0.0498 a 6.8102122,6.8102122 0 0 1 2.51317,2.41123 6.8102122,6.8102122 0 0 1 1.6573,-0.21351 6.8102122,6.8102122 0 0 1 1.60263,0.19139 6.8102122,6.8102122 0 0 1 2.59056,-2.4405 6.8102118,6.8102118 0 0 1 -0.24074,-1.76026 6.8102118,6.8102118 0 0 1 4e-4,-0.0105 6.8102118,6.8102118 0 0 1 -4e-4,-0.0105 6.8102118,6.8102118 0 0 1 0.24074,-1.76026 6.8102122,6.8102122 0 0 1 -2.59056,-2.4405 6.8102122,6.8102122 0 0 1 -1.60263,0.1914 6.8102122,6.8102122 0 0 1 -1.6573,-0.21351 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.9042px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="150.17197"
+       y="159.31859"
+       id="text1700"><tspan
+         sodipodi:role="line"
+         id="tspan1698"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Serif';-inkscape-font-specification:'Noto Serif';fill:#ffffff;stroke-width:0.264583"
+         x="150.17197"
+         y="159.31859"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Serif';-inkscape-font-specification:'Noto Serif';fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           id="tspan23232"
+           rotate="0 0 0">HR</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Serif';-inkscape-font-specification:'Noto Serif';fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           id="tspan19714"
+           rotate="0" /></tspan></text>
+  </g>
+</svg>
