@@ -7,6 +7,8 @@ My goal is to update HRnet and convert it to React.
 
 - [ ] Convert the entire project to React
   - [x] New project : pnpm create vite . (react+ts)
+  - [x] Palette : #93AD18, #5a7003, #fcfdfa, #0C0F06, #690ABD, #420174 : colorpicker + coolors.co
+  - [x] Logo HRnet + Noto Serif
   - [ ] Copy the old app to modern React structure
   - [ ] New pages : "Create Employee" and "Employee List"
   - [ ] Add a state management system : Context
