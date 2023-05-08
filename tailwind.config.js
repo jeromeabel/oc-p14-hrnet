@@ -1,20 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: '1rem',
     },
     colors: {
-      'primary': '#93AD18',
-      'secondary': '#5a7003',
-      'white': '#fcfdfa',
-      'black': '#0C0F06',
-      'highlight': '#690ABD',
+      primary: '#93AD18',
+      secondary: '#5a7003',
+      white: '#fcfdfa',
+      black: '#0C0F06',
+      highlight: '#690ABD',
       'highlight-darken': '#420174',
     },
     fontFamily: {
@@ -23,4 +20,4 @@ export default {
     extend: {},
   },
   plugins: [],
-}
+};
