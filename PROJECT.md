@@ -1,27 +1,34 @@
 # PROJECT
 
-WealthHealth is a large financial company that uses an in-house employee management application: HRnet. 
-My goal is to update HRnet and convert it to React 
+**WealthHealth** is a large financial company that uses an in-house employee management application: **HRnet**.
+My goal is to update HRnet and convert it to React.
 
 ## TASKS
 
-- Convert the entire project to React
-  - New pages : "Create Employee" and "Employee List" 
-  - Add a state management system : Context
-  - Modern style
-  - Unit tests and manual tests
-- Convert one JQuery plugins to React. The other in React or Library.
-  - Guidelines only the UI code. Functional programming. Comments.
-  - date picker : https://github.com/xdan/datetimepicker
-  - modal : https://github.com/kylefox/jquery-modal
-  - select menu : https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js
-  - Data table : https://github.com/DataTables/DataTables
-- Performance tests Lighthouse
-  - Test the older version
-  - Build and test the new one
-  - Post the React component on npm as a package 
+- [ ] Convert the entire project to React
+  - [x] New project : pnpm create vite . (react+ts)
+  - [ ] Copy the old app to modern React structure
+  - [ ] New pages : "Create Employee" and "Employee List"
+  - [ ] Add a state management system : Context
+  - [ ] Modern style
+  - [ ] Unit tests and manual tests
+- [ ] Convert one JQuery plugins to React. The other in React or Library.
+  - [ ] Guidelines only the UI code. Functional programming. Comments.
+  - [ ] [date picker](https://github.com/xdan/datetimepicker)
+  - [ ] [modal](https://github.com/kylefox/jquery-modal)
+  - [ ] [select menu](https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js)
+  - [ ] [Data table](https://github.com/DataTables/DataTables)
+- [ ] Performance tests with Lighthouse
+  - [ ] Test the older version
+  - [ ] Build and test the new one
+  - [ ] Post the React component on npm as a package
+- [ ] Deliverables 
 
-## DELIVERIES
+## Resources
+
+- npm : https://github.com/aladin002dz/simple-component-library
+
+## DELIVERABLES
 
 P14_Nom_Prenom_042023.zip :
 
