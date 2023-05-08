@@ -9,6 +9,12 @@ My goal is to update HRnet and convert it to React.
   - [x] New project : pnpm create vite . (react+ts)
   - [x] Palette : #93AD18, #5a7003, #fcfdfa, #0C0F06, #690ABD, #420174 : colorpicker + coolors.co
   - [x] Logo HRnet + Noto Serif
+  - [x] Add React router, and basic routing : layout, home, error404
+  - [x] Add Tailwind : 
+    - [x] pnpm install -D tailwindcss postcss autoprefixer
+    - [x] npx tailwindcss init -p
+    - [x] tailwing.config.js : theme:colors+font
+    - [x] index.css : apply base h1,h2,h3,h4,h5
   - [ ] Copy the old app to modern React structure
   - [ ] New pages : "Create Employee" and "Employee List"
   - [ ] Add a state management system : Context
