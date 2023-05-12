@@ -6,18 +6,20 @@ export default {
       center: true,
       padding: '1rem',
     },
-    colors: {
-      primary: '#93AD18',
-      secondary: '#5a7003',
-      white: '#fcfdfa',
-      black: '#0C0F06',
-      highlight: '#690ABD',
-      'highlight-darken': '#420174',
-    },
     fontFamily: {
       serif: ['Noto Serif', 'serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        error: '#ff0505',
+        primary: '#93AD18',
+        secondary: '#5a7003',
+        white: '#fcfdfa',
+        black: '#0C0F06',
+        highlight: '#690ABD',
+        'highlight-darken': '#420174',
+      },
+    },
   },
   plugins: [],
 };

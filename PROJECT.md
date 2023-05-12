@@ -21,10 +21,8 @@ My goal is to update HRnet and convert it to React.
     - [x] Footer
     - [x] Content : two CTA links create + view
   - [x] Add routing to create and view pages
-  - [ ] Create Page
-
-    - [ ] Form : pnpm install -D @tailwindcss/forms yup formik
-
+  - [ ] Create Page - Form
+    - [ ] Add Customized Input component (issues with tailwind+formik+yup... = to React-Hook-form+Zod)
   - [ ] Employees list Page
   - [ ] Error Page
   - [ ] Add a state management system : Context
@@ -48,6 +46,9 @@ My goal is to update HRnet and convert it to React.
 - tailwind : https://tailwindcomponents.com/cheatsheet/
 - form : https://formik.org/docs/examples/async-submission
 - npm : https://github.com/aladin002dz/simple-component-library
+
+zup : "strictNullChecks": true,
+"strictFunctionTypes": false
 
 ## DELIVERABLES
 

@@ -10,7 +10,7 @@ const Home = () => {
           HRnet is used in our compagny to manage Employees records.
         </p>
         <div className="flex gap-8 py-8">
-          <CTA title="Create employee" href="/create" />
+          <CTA title="Add employee" href="/add" />
           <CTA title="View employees" href="/view" />
         </div>
       </div>
