@@ -1,9 +1,5 @@
 import { z } from 'zod';
 
-// <input type="url" pattern="//"> = string vs URL()
-// <input type="number" > = string : add valueAsNumber property = true
-// <input type="date" > = string "dd-mm-yyyy" vs Date()
-
 // By default, all fields are required
 export const formSchema = z.object({
   firstName: z.string().min(2).max(30),
@@ -21,7 +17,7 @@ export const formSchema = z.object({
         const age = Math.abs(ageDate.getUTCFullYear() - 1970);
         return age >= 18;
       },
-      { message: 'You must be 18 years or older' }
+      { message: 'The employee must be 18 years or older' }
     ),
   startDate: z.coerce
     .date()
@@ -32,7 +28,9 @@ export const formSchema = z.object({
   street: z.string().min(5).max(100),
   city: z.string().min(2).max(100),
   zipCode: z.number().min(501).max(99950), // American 5-digit code
+  department: z.string(),
+  state: z.string(),
 });
 
-// Typescript : magical
+// Typescript
 export type FormType = z.infer<typeof formSchema>;

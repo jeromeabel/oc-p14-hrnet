@@ -3,6 +3,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Input from './Input';
 
 import { FormType, formSchema } from '../types/types';
+import Select from './Select';
+import { departments, states } from '../data/data';
 
 const AddForm = () => {
   const {
@@ -11,6 +13,7 @@ const AddForm = () => {
     formState: { errors },
   } = useForm<FormType>({
     resolver: zodResolver(formSchema),
+    mode: 'onBlur',
   });
 
   const onSubmit = (data: FormType) => {
@@ -73,6 +76,22 @@ const AddForm = () => {
           error={errors.zipCode}
         />
       </fieldset>
+
+      <Select<FormType>
+        name="department"
+        label="Department"
+        error={errors.department}
+        register={register}
+        options={departments}
+      />
+
+      <Select<FormType>
+        name="state"
+        label="State"
+        error={errors.state}
+        register={register}
+        options={states}
+      />
 
       <input
         className="p-3 rounded bg-secondary hover:bg-primary text-white text-xl"

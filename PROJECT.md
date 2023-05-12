@@ -22,9 +22,11 @@ My goal is to update HRnet and convert it to React.
     - [x] Content : two CTA links create + view
   - [x] Add routing to create and view pages
   - [ ] Create Page - Form
-    - [ ] Add Customized Input component (issues with tailwind+formik+yup... = to React-Hook-form+Zod)
-    - [ ]
+    - [x] Add Customized Input component
+    - [x] Select component
+    - [ ] Datepicker component
   - [ ] Employees list Page
+    - [ ] Table Component
   - [ ] Error Page
   - [ ] Add a state management system : Context
   - [ ] Responsive
@@ -44,6 +46,11 @@ My goal is to update HRnet and convert it to React.
   - [ ] Build and test the new one
   - [ ] Post the React component on npm as a package
 - [ ] Deliverables
+
+## Journey
+
+(issues with tailwind+formik+yup... = to React-Hook-form+Zod)
+Issues Types
 
 ## Resources
 
