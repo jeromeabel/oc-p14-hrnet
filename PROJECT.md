@@ -23,6 +23,7 @@ My goal is to update HRnet and convert it to React.
   - [x] Add routing to create and view pages
   - [ ] Create Page - Form
     - [ ] Add Customized Input component (issues with tailwind+formik+yup... = to React-Hook-form+Zod)
+    - [ ]
   - [ ] Employees list Page
   - [ ] Error Page
   - [ ] Add a state management system : Context
@@ -31,10 +32,13 @@ My goal is to update HRnet and convert it to React.
 
 - [ ] Convert one JQuery plugins to React. The other in React or Library.
   - [ ] Guidelines only the UI code. Functional programming. Comments.
-  - [ ] [date picker](https://github.com/xdan/datetimepicker)
+  - [ ] [date picker](https://github.com/xdan/datetimepicker) : html
   - [ ] [modal](https://github.com/kylefox/jquery-modal)
   - [ ] [select menu](https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js)
   - [ ] [Data table](https://github.com/DataTables/DataTables)
+  - [ ] Export NPM :
+    - [ ] https://github.com/aladin002dz/simple-component-library/tree/master
+    - [ ] https://github.com/fabiandeneuville/FabianDeneuville_14_22042023_Datepicker/tree/main
 - [ ] Performance tests with Lighthouse
   - [ ] Test the older version
   - [ ] Build and test the new one
