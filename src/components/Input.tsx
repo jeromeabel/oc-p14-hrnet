@@ -26,7 +26,7 @@ const Input = ({
         {label} {required && '*'}
       </label>
       <input
-        className="p-3 border bg-gray-200 rounded focus:bg-gray-100 text-xl"
+        className="p-2 bg-gray-200 rounded focus:bg-gray-100 "
         id={name}
         type={type}
         {...register(name, { valueAsNumber: type === 'number' })}
@@ -35,7 +35,7 @@ const Input = ({
       />
       <p aria-live="polite" className="h-6">
         {error && (
-          <span className="text-red-500 px-2" role="alert">
+          <span className="text-red-500 text-sm" role="alert">
             ⚠️ {error.message}
           </span>
         )}
