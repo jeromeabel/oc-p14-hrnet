@@ -1,5 +1,5 @@
 import CTA from '../components/CTA';
-import companyImg from '/company.jpg';
+import companyImg from '/company.svg';
 
 const Home = () => {
   return (
