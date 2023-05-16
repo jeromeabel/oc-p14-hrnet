@@ -5,15 +5,27 @@ import Input from './Input';
 import { FormType, formSchema } from '../types/types';
 import Select from './Select';
 import { departments, states } from '../data/data';
+import Select2 from './Select2';
 
 const AddForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(formSchema),
     mode: 'onBlur',
+    defaultValues: {
+      firstName: 'John',
+      lastName: 'Doe',
+      dateOfBirth: new Date('1980-01-01'),
+      startDate: new Date('2020-01-01'),
+      street: '77 Massachusetts Avenue',
+      city: 'Boston',
+      zipCode: 2139,
+      department: 'Legal',
+      state: 'KS',
+    },
   });
 
   const onSubmit = (data: FormType) => {
@@ -85,17 +97,26 @@ const AddForm = () => {
         options={departments}
       />
 
-      <Select<FormType>
+      {/* <Select<FormType>
         name="state"
         label="State"
         error={errors.state}
         register={register}
+        options={states}
+      /> */}
+
+      <Select2
+        {...register('state')}
+        name="state"
+        label="State"
+        error={errors.state?.message}
         options={states}
       />
 
       <input
         className="p-3 rounded bg-secondary hover:bg-primary text-white text-xl"
         type="submit"
+        disabled={isSubmitting}
       />
     </form>
   );
