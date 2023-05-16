@@ -30,11 +30,11 @@ My goal is to update HRnet and convert it to React.
     - [x] Footer
     - [x] Content : two CTA links create + view
   - [x] Add routing to create and view pages
-  - [ ] Create Page
-  - [x] use React-Hook-Form and Zod schema
-    - [x] Add Customized Input component
-    - [x] Select component
-  - [ ] Modal window
+  - [x] Create Page
+    - [x] use React-Hook-Form and Zod schema
+    - [x] Customized Input component
+    - [x] Customized Select component
+    - [ ] Modal window
     - [ ] Datepicker component
   - [ ] Employees list Page
     - [ ] Table Component / pagination
@@ -63,6 +63,12 @@ Issues Types... Workflow with third party
 
 ????
 
+// Use valueAsNumber for number type and valueAsDate for date type
+valueAsDate
+
+?? default value for date... value={defaultValues?.dateOfBirth?.toISOString().split('T')[0]}
+value={value}
+
 - yud+formik ? tailwind..
 - ? tailwind : config.... extend/theme!!
 - API constraint + Regex ? > Zod ?
@@ -73,6 +79,8 @@ Issues Types... Workflow with third party
 
 ?? doc rhf ?
 // doc : React.forwardRef<HTMLSelectElement, { label: string } & ReturnType<UseFormRegister<IFormValues>>
+
+?? zod required ??
 
 ???
 Ref+onChange

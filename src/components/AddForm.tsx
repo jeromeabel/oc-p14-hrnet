@@ -1,12 +1,34 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import Input from './Input';
 
 import { FormType, formSchema } from '../types/types';
-// import Select from './Select';
 import { departments, states } from '../data/data';
-import Select2 from './Select2';
-import Input2 from './Input2';
+import Select from './Select';
+import Input from './Input';
+
+const defaultData = {
+  firstName: 'John',
+  lastName: 'Doe',
+  dateOfBirth: new Date('1980-01-01'),
+  startDate: new Date('2020-01-01'),
+  street: '77 Massachusetts Avenue',
+  city: 'Boston',
+  zipCode: 2139,
+  department: 'Legal',
+  state: 'KS',
+};
+
+const voidData = {
+  firstName: '',
+  lastName: '',
+  dateOfBirth: new Date(''),
+  startDate: new Date(''),
+  street: '',
+  city: '',
+  zipCode: 0,
+  department: '',
+  state: '',
+};
 
 const AddForm = () => {
   const {
@@ -15,18 +37,8 @@ const AddForm = () => {
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(formSchema),
-    mode: 'onBlur',
-    defaultValues: {
-      firstName: 'John',
-      lastName: 'Doe',
-      dateOfBirth: new Date('1980-01-01'),
-      startDate: new Date('2020-01-01'),
-      street: '77 Massachusetts Avenue',
-      city: 'Boston',
-      zipCode: 2139,
-      department: 'Legal',
-      state: 'KS',
-    },
+    mode: 'all',
+    defaultValues: defaultData,
   });
 
   const onSubmit = (data: FormType) => {
@@ -38,88 +50,57 @@ const AddForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="my-8 flex flex-col gap-4"
     >
-      {/* <Input
-        name="firstName"
-        label="First name"
-        register={register}
-        error={errors.firstName}
-      /> */}
-
-      <Input2
+      <Input
         {...register('firstName')}
         label="First name"
         error={errors.firstName?.message}
       />
       <Input
-        name="lastName"
+        {...register('lastName')}
         label="Last name"
-        register={register}
-        error={errors.lastName}
+        error={errors.lastName?.message}
       />
       <Input
+        {...register('dateOfBirth', { valueAsDate: true })}
         type="date"
-        name="dateOfBirth"
         label="Date of birth"
-        register={register}
-        error={errors.dateOfBirth}
+        error={errors.dateOfBirth?.message}
       />
       <Input
+        {...register('startDate', { valueAsDate: true })}
         type="date"
-        name="startDate"
         label="Start date"
-        register={register}
-        error={errors.startDate}
+        error={errors.startDate?.message}
       />
 
       <fieldset className="p-4 border">
         <legend>Address</legend>
 
         <Input
-          name="street"
+          {...register('street')}
           label="Street"
-          register={register}
-          error={errors.street}
+          error={errors.street?.message}
         />
         <Input
-          name="city"
+          {...register('city')}
           label="City"
-          register={register}
-          error={errors.city}
+          error={errors.city?.message}
         />
-
         <Input
+          {...register('zipCode', { valueAsNumber: true })}
           type="number"
-          name="zipCode"
           label="Zip code"
-          register={register}
-          error={errors.zipCode}
+          error={errors.zipCode?.message}
         />
       </fieldset>
 
-      {/* <Select<FormType>
-        name="department"
-        label="Department"
-        error={errors.department}
-        register={register}
-        options={departments}
-      /> */}
-
-      {/* <Select<FormType>
-        name="state"
-        label="State"
-        error={errors.state}
-        register={register}
-        options={states}
-      /> */}
-
-      <Select2
+      <Select
         {...register('department')}
         label="Department"
         error={errors.department?.message}
         options={departments}
       />
-
-      <Select2
+      <Select
         {...register('state')}
         label="State"
         error={errors.state?.message}

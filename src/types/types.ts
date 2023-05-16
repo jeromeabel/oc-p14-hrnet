@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-// By default, all fields are required
+// By default, all fields are required ?
 export const formSchema = z.object({
   firstName: z
     .string()
@@ -42,9 +42,9 @@ export const formSchema = z.object({
   zipCode: z
     .number({ invalid_type_error: 'American zip code is 5-digit' })
     .min(501)
-    .max(99950), // American 5-digit code
-  department: z.string().min(2).max(100),
-  state: z.string().min(2).max(100),
+    .max(99950),
+  department: z.string().min(2).max(80),
+  state: z.string().min(2).max(80),
 });
 
 // Typescript

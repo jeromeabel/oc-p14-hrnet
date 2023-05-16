@@ -1,37 +1,41 @@
-import {
-  Path,
-  UseFormRegister,
-  FieldError,
-  FieldValues,
-} from 'react-hook-form';
+import React from 'react';
 
-type SelectProps<T extends FieldValues> = {
-  name: Path<T>;
+type Option = {
+  value: string;
   label: string;
-  register: UseFormRegister<T>;
-  required?: boolean;
-  error?: FieldError;
-  options: { label: string; value: string }[];
 };
 
-function Select<T extends FieldValues>({
-  options,
-  name,
-  label,
-  register,
-  required = true,
-  error,
-}: SelectProps<T>) {
-  return (
+/*
+Usage: 
+<Select
+  {...register('department')}
+  label="Department"
+  error={errors.department?.message}
+  options={departments}
+/>*/
+
+interface SelectProps {
+  options: Option[];
+  error?: string;
+  name: string;
+  label: string;
+  required?: boolean;
+}
+
+const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
+  ({ options, error, name, label, required = true, ...rest }, ref) => (
     <div className="flex flex-col gap-1">
       <label htmlFor={name} className="text-gray-600">
         {label} {required && '*'}
       </label>
       <select
-        {...register(name)}
+        {...rest}
+        ref={ref}
         name={name}
         id={name}
-        className="p-2 bg-gray-200 rounded focus:bg-gray-100 "
+        className={`p-2 bg-gray-200 rounded ring-2 focus:bg-gray-100 focus:outline-none ${
+          error ? 'ring-red-500' : 'ring-gray-300'
+        }`}
         aria-invalid={error ? 'true' : 'false'}
       >
         {options.map((option) => (
@@ -44,12 +48,12 @@ function Select<T extends FieldValues>({
       <p aria-live="polite" className="h-6">
         {error && (
           <span className="text-red-500 text-sm" role="alert">
-            ⚠️ {error.message}
+            ⚠️ {error}
           </span>
         )}
       </p>
     </div>
-  );
-}
+  )
+);
 
 export default Select;
