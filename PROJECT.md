@@ -71,6 +71,17 @@ Issues Types... Workflow with third party
 
 - isoler select : generic type + register
 
+?? doc rhf ?
+// doc : React.forwardRef<HTMLSelectElement, { label: string } & ReturnType<UseFormRegister<IFormValues>>
+
+???
+Ref+onChange
+In the context of form validation, react-hook-form primarily relies on the ref to register form inputs, establish the connection between form state and DOM elements, and handle form submission. The onChange event handler complements the ref by updating the form state based on user interactions, ensuring that the form state is accurate and up-to-date with the user's selections.
+
+Voir sur la doc : How to share ref usage?
+React Hook Form needs a ref to collect the input value. However, you may want to use ref for other purposes (e.g. scroll into the view, or focus).
+https://react-hook-form.com/faqs/
+
 ## Resources
 
 - tailwind : https://tailwindcomponents.com/cheatsheet/

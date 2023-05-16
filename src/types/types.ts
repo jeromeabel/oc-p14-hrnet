@@ -6,12 +6,16 @@ export const formSchema = z.object({
     .string()
     .min(2)
     .max(50)
-    .regex(/^[A-ÿ]{2,}[A-ÿ\-\s]*$/),
+    .regex(/^[A-ÿ]{2,}[A-ÿ\-\s]*$/, {
+      message: 'The first name must contain only letters',
+    }),
   lastName: z
     .string()
     .min(2)
     .max(60)
-    .regex(/^[A-ÿ]{2,}[A-ÿ\-\s]*$/),
+    .regex(/^[A-ÿ]{2,}[A-ÿ\-\s]*$/, {
+      message: 'The last name must contain only letters',
+    }),
   dateOfBirth: z.coerce
     .date()
     .min(new Date('1920-01-01'), {
@@ -35,9 +39,12 @@ export const formSchema = z.object({
     .max(new Date(), { message: 'Date must be in the past' }),
   street: z.string().min(5).max(100),
   city: z.string().min(2).max(100),
-  zipCode: z.number().min(501).max(99950), // American 5-digit code
-  department: z.string(),
-  state: z.string(),
+  zipCode: z
+    .number({ invalid_type_error: 'American zip code is 5-digit' })
+    .min(501)
+    .max(99950), // American 5-digit code
+  department: z.string().min(2).max(100),
+  state: z.string().min(2).max(100),
 });
 
 // Typescript

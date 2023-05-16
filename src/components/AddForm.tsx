@@ -3,9 +3,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Input from './Input';
 
 import { FormType, formSchema } from '../types/types';
-import Select from './Select';
+// import Select from './Select';
 import { departments, states } from '../data/data';
 import Select2 from './Select2';
+import Input2 from './Input2';
 
 const AddForm = () => {
   const {
@@ -37,11 +38,17 @@ const AddForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="my-8 flex flex-col gap-4"
     >
-      <Input
+      {/* <Input
         name="firstName"
         label="First name"
         register={register}
         error={errors.firstName}
+      /> */}
+
+      <Input2
+        {...register('firstName')}
+        label="First name"
+        error={errors.firstName?.message}
       />
       <Input
         name="lastName"
@@ -89,13 +96,13 @@ const AddForm = () => {
         />
       </fieldset>
 
-      <Select<FormType>
+      {/* <Select<FormType>
         name="department"
         label="Department"
         error={errors.department}
         register={register}
         options={departments}
-      />
+      /> */}
 
       {/* <Select<FormType>
         name="state"
@@ -106,8 +113,14 @@ const AddForm = () => {
       /> */}
 
       <Select2
+        {...register('department')}
+        label="Department"
+        error={errors.department?.message}
+        options={departments}
+      />
+
+      <Select2
         {...register('state')}
-        name="state"
         label="State"
         error={errors.state?.message}
         options={states}
