@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -5,6 +6,8 @@ import { FormType, formSchema } from '../types/types';
 import { departments, states } from '../data/data';
 import Select from './Select';
 import Input from './Input';
+
+import Modal from './Modal';
 
 const defaultData = {
   firstName: 'John',
@@ -31,6 +34,8 @@ const voidData = {
 };
 
 const AddForm = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -41,78 +46,92 @@ const AddForm = () => {
     defaultValues: defaultData,
   });
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const onSubmit = (data: FormType) => {
     console.log(data);
+    // handleOpenModal();
+    setIsModalOpen(true);
+    console.log(isModalOpen);
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="my-8 flex flex-col gap-4"
-    >
-      <Input
-        {...register('firstName')}
-        label="First name"
-        error={errors.firstName?.message}
-      />
-      <Input
-        {...register('lastName')}
-        label="Last name"
-        error={errors.lastName?.message}
-      />
-      <Input
-        {...register('dateOfBirth', { valueAsDate: true })}
-        type="date"
-        label="Date of birth"
-        error={errors.dateOfBirth?.message}
-      />
-      <Input
-        {...register('startDate', { valueAsDate: true })}
-        type="date"
-        label="Start date"
-        error={errors.startDate?.message}
-      />
-
-      <fieldset className="p-4 border">
-        <legend>Address</legend>
-
+    <div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="my-8 flex flex-col gap-4"
+      >
         <Input
-          {...register('street')}
-          label="Street"
-          error={errors.street?.message}
+          {...register('firstName')}
+          label="First name"
+          error={errors.firstName?.message}
         />
         <Input
-          {...register('city')}
-          label="City"
-          error={errors.city?.message}
+          {...register('lastName')}
+          label="Last name"
+          error={errors.lastName?.message}
         />
         <Input
-          {...register('zipCode', { valueAsNumber: true })}
-          type="number"
-          label="Zip code"
-          error={errors.zipCode?.message}
+          {...register('dateOfBirth', { valueAsDate: true })}
+          type="date"
+          label="Date of birth"
+          error={errors.dateOfBirth?.message}
         />
-      </fieldset>
+        <Input
+          {...register('startDate', { valueAsDate: true })}
+          type="date"
+          label="Start date"
+          error={errors.startDate?.message}
+        />
 
-      <Select
-        {...register('department')}
-        label="Department"
-        error={errors.department?.message}
-        options={departments}
-      />
-      <Select
-        {...register('state')}
-        label="State"
-        error={errors.state?.message}
-        options={states}
-      />
+        <fieldset className="p-4 border">
+          <legend>Address</legend>
 
-      <input
-        className="p-3 rounded bg-secondary hover:bg-primary text-white text-xl"
-        type="submit"
-        disabled={isSubmitting}
-      />
-    </form>
+          <Input
+            {...register('street')}
+            label="Street"
+            error={errors.street?.message}
+          />
+          <Input
+            {...register('city')}
+            label="City"
+            error={errors.city?.message}
+          />
+          <Input
+            {...register('zipCode', { valueAsNumber: true })}
+            type="number"
+            label="Zip code"
+            error={errors.zipCode?.message}
+          />
+        </fieldset>
+
+        <Select
+          {...register('department')}
+          label="Department"
+          error={errors.department?.message}
+          options={departments}
+        />
+        <Select
+          {...register('state')}
+          label="State"
+          error={errors.state?.message}
+          options={states}
+        />
+
+        <input
+          className="p-3 rounded bg-secondary hover:bg-primary text-white text-xl cursor-pointer"
+          type="submit"
+          disabled={isSubmitting}
+        />
+      </form>
+
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <h2>Success!</h2>
+        <p>Your form has been submitted successfully.</p>
+      </Modal>
+    </div>
   );
 };
 
