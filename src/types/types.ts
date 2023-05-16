@@ -2,8 +2,16 @@ import { z } from 'zod';
 
 // By default, all fields are required
 export const formSchema = z.object({
-  firstName: z.string().min(2).max(30),
-  lastName: z.string().min(2).max(60),
+  firstName: z
+    .string()
+    .min(2)
+    .max(50)
+    .regex(/^[A-ÿ]{2,}[A-ÿ\-\s]*$/),
+  lastName: z
+    .string()
+    .min(2)
+    .max(60)
+    .regex(/^[A-ÿ]{2,}[A-ÿ\-\s]*$/),
   dateOfBirth: z.coerce
     .date()
     .min(new Date('1920-01-01'), {
