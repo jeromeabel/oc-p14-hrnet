@@ -13,9 +13,9 @@ const defaultData = {
   startDate: new Date('2020-01-01'),
   street: '77 Massachusetts Avenue',
   city: 'Boston',
+  state: 'KS',
   zipCode: 2139,
   department: 'Legal',
-  state: 'KS',
 };
 
 type AddFormProps = {
@@ -75,6 +75,14 @@ const AddForm = ({ onSubmit }: AddFormProps) => {
             label="City"
             error={errors.city?.message}
           />
+
+          <Select
+            {...register('state')}
+            label="State"
+            error={errors.state?.message}
+            options={states}
+          />
+
           <Input
             {...register('zipCode', { valueAsNumber: true })}
             type="number"
@@ -88,12 +96,6 @@ const AddForm = ({ onSubmit }: AddFormProps) => {
           label="Department"
           error={errors.department?.message}
           options={departments}
-        />
-        <Select
-          {...register('state')}
-          label="State"
-          error={errors.state?.message}
-          options={states}
         />
 
         <input
