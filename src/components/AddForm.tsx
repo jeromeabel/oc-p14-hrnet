@@ -33,14 +33,10 @@ const AddForm = ({ onSubmit }: AddFormProps) => {
     defaultValues: defaultData,
   });
 
-  const handleFormSubmit = (data: AddFormType) => {
-    onSubmit(data);
-  };
-
   return (
     <div>
       <form
-        onSubmit={handleSubmit(handleFormSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
         className="my-8 flex flex-col gap-4"
       >
         <Input
