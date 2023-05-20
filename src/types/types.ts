@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 // By default, all fields are required ?
-export const formSchema = z.object({
+export const addFormSchema = z.object({
   firstName: z
     .string()
     .min(2)
@@ -48,4 +48,4 @@ export const formSchema = z.object({
 });
 
 // Typescript
-export type FormType = z.infer<typeof formSchema>;
+export type AddFormType = z.infer<typeof addFormSchema>;

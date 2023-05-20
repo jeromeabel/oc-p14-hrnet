@@ -30,11 +30,11 @@ My goal is to update HRnet and convert it to React.
     - [x] Footer
     - [x] Content : two CTA links create + view
   - [x] Add routing to create and view pages
-  - [x] Create Page
+  - [ ] Create Page
     - [x] use React-Hook-Form and Zod schema
     - [x] Customized Input component
     - [x] Customized Select component
-    - [ ] Modal window
+    - [x] Modal window
     - [ ] Datepicker component
   - [ ] Employees list Page
     - [ ] Table Component / pagination
@@ -89,6 +89,21 @@ In the context of form validation, react-hook-form primarily relies on the ref t
 Voir sur la doc : How to share ref usage?
 React Hook Form needs a ref to collect the input value. However, you may want to use ref for other purposes (e.g. scroll into the view, or focus).
 https://react-hook-form.com/faqs/
+
+## Optimization
+
+- Choix plugin : date = non!, select
+
+- ? select: add success/warning/error visuals :- type AlertType = "error" | "warning" | "success";
+- ? enum select
+- https://tailwindcss.com/docs/optimizing-for-production
+
+https://codesandbox.io/s/react-hook-form-typescript-xnb1u?file=/src/App.tsx
+https://www.thisdot.co/blog/how-to-create-reusable-form-components-with-react-hook-forms-and-typescript/
+https://blog.bitsrc.io/react-form-validation-5aa06193bec4
+https://www.youtube.com/watch?v=4zt1eadehKQ
+https://excalidraw.com/#room=b6e2c1c8479b64e16921,-o-Hr5YMA56buUPlDXXMWw
+https://www.totaltypescript.com/tutorials/zod/zod-section/number
 
 ## Resources
 

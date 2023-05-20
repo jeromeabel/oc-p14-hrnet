@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { FormType, formSchema } from '../types/types';
+import { AddFormType, addFormSchema } from '../types/types';
 import { departments, states } from '../data/data';
 import Select from './Select';
 import Input from './Input';
-
-import Modal from './Modal';
 
 const defaultData = {
   firstName: 'John',
@@ -21,46 +18,29 @@ const defaultData = {
   state: 'KS',
 };
 
-const voidData = {
-  firstName: '',
-  lastName: '',
-  dateOfBirth: new Date(''),
-  startDate: new Date(''),
-  street: '',
-  city: '',
-  zipCode: 0,
-  department: '',
-  state: '',
+type AddFormProps = {
+  onSubmit: (data: AddFormType) => void;
 };
 
-const AddForm = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+const AddForm = ({ onSubmit }: AddFormProps) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormType>({
-    resolver: zodResolver(formSchema),
+  } = useForm<AddFormType>({
+    resolver: zodResolver(addFormSchema),
     mode: 'all',
     defaultValues: defaultData,
   });
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const onSubmit = (data: FormType) => {
-    console.log(data);
-    // handleOpenModal();
-    setIsModalOpen(true);
-    console.log(isModalOpen);
+  const handleFormSubmit = (data: AddFormType) => {
+    onSubmit(data);
   };
 
   return (
     <div>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(handleFormSubmit)}
         className="my-8 flex flex-col gap-4"
       >
         <Input
@@ -126,11 +106,6 @@ const AddForm = () => {
           disabled={isSubmitting}
         />
       </form>
-
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <h2>Success!</h2>
-        <p>Your form has been submitted successfully.</p>
-      </Modal>
     </div>
   );
 };
