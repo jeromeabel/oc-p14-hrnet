@@ -1,92 +1,133 @@
-import { AddFormType } from '../types/types';
+// type DataItem = (typeof mockData)[number];
 
-export const mockData: AddFormType[] = [
+export type ItemType = {
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  startDate: string;
+  street: string;
+  city: string;
+  state: string;
+  zipCode: string;
+  department: string;
+};
+
+// type ItemType = {
+//   firstName: string;
+//   lastName: string;
+//   dateOfBirth: Date;
+//   startDate: Date;
+//   street: string;
+//   city: string;
+//   state: string;
+//   zipCode: number;
+//   department: string;
+// };
+
+export type HeaderType = {
+  key: keyof ItemType;
+  label: string;
+};
+
+export const mockDataHeaders: HeaderType[] = [
+  { key: 'firstName', label: 'First name' },
+  { key: 'lastName', label: 'Last name' },
+  { key: 'startDate', label: 'Start date' },
+  { key: 'dateOfBirth', label: 'Date of birth' },
+  { key: 'street', label: 'Street' },
+  { key: 'city', label: 'City' },
+  { key: 'zipCode', label: 'Zip code' },
+  { key: 'state', label: 'State' },
+  { key: 'department', label: 'Department' },
+];
+
+export const mockData: ItemType[] = [
   {
     firstName: 'John',
     lastName: 'Doe',
-    dateOfBirth: new Date('1980-01-01'),
-    startDate: new Date('2020-01-01'),
+    dateOfBirth: '1980-01-01',
+    startDate: '2020-01-01',
     street: '77 Massachusetts Avenue',
     city: 'Boston',
     state: 'KS',
-    zipCode: 2139,
+    zipCode: '2139',
     department: 'Legal',
   },
   {
     firstName: 'Jane',
     lastName: 'Smith',
-    dateOfBirth: new Date('1992-05-10'),
-    startDate: new Date('2018-06-15'),
+    dateOfBirth: '1992-05-10',
+    startDate: '2018-06-15',
     street: '123 Main Street',
     city: 'New York',
     state: 'NY',
-    zipCode: 10001,
+    zipCode: '10001',
     department: 'Sales',
   },
   {
     firstName: 'Michael',
     lastName: 'Johnson',
-    dateOfBirth: new Date('1985-09-20'),
-    startDate: new Date('2019-03-12'),
+    dateOfBirth: '1985-09-20',
+    startDate: '2019-03-12',
     street: '456 Elm Street',
     city: 'Chicago',
     state: 'IL',
-    zipCode: 60610,
+    zipCode: '60610',
     department: 'Marketing',
   },
   {
     firstName: 'Emily',
     lastName: 'Davis',
-    dateOfBirth: new Date('1990-07-15'),
-    startDate: new Date('2017-02-28'),
+    dateOfBirth: '1990-07-15',
+    startDate: '2017-02-28',
     street: '789 Oak Avenue',
     city: 'Los Angeles',
     state: 'CA',
-    zipCode: 90001,
+    zipCode: '90001',
     department: 'Engineering',
   },
   {
     firstName: 'William',
     lastName: 'Anderson',
-    dateOfBirth: new Date('1982-12-05'),
-    startDate: new Date('2022-04-20'),
+    dateOfBirth: '1982-12-05',
+    startDate: '2022-04-20',
     street: '321 Pine Road',
     city: 'Seattle',
     state: 'WA',
-    zipCode: 98101,
+    zipCode: '98101',
     department: 'Finance',
   },
   {
     firstName: 'Olivia',
     lastName: 'Wilson',
-    dateOfBirth: new Date('1998-03-25'),
-    startDate: new Date('2016-08-10'),
+    dateOfBirth: '1998-03-25',
+    startDate: '2016-08-10',
     street: '555 Cedar Lane',
     city: 'San Francisco',
     state: 'CA',
-    zipCode: 94102,
+    zipCode: '94102',
     department: 'Human Resources',
   },
   {
     firstName: 'James',
     lastName: 'Brown',
-    dateOfBirth: new Date('1987-06-30'),
-    startDate: new Date('2021-09-05'),
+    dateOfBirth: '1987-06-30',
+    startDate: '2021-09-05',
     street: '999 Maple Avenue',
     city: 'Miami',
     state: 'FL',
-    zipCode: 33101,
+    zipCode: '33101',
     department: 'Operations',
   },
   {
     firstName: 'Sophia',
     lastName: 'Taylor',
-    dateOfBirth: new Date('1995-11-18'),
-    startDate: new Date('2019-11-30'),
+    dateOfBirth: '1995-11-18',
+    startDate: '2019-11-30',
     street: '222 Elmwood Drive',
     city: 'Dallas',
     state: 'TX',
-    zipCode: 75201,
+    zipCode: '75201',
     department: 'Customer Service',
   },
 ];

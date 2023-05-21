@@ -1,10 +1,19 @@
-import Table from '../components/Table';
+import TableData from '../components/TableData/TableData';
+import {
+  ItemType,
+  mockData,
+  mockDataHeaders,
+  HeaderType,
+} from '../data/mockData';
 
 const View = () => {
   return (
     <div>
       <h1>Current employees</h1>
-      <Table />
+      <TableData<ItemType, HeaderType>
+        data={mockData}
+        headers={mockDataHeaders}
+      />
     </div>
   );
 };

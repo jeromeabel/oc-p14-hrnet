@@ -90,6 +90,43 @@ Voir sur la doc : How to share ref usage?
 React Hook Form needs a ref to collect the input value. However, you may want to use ref for other purposes (e.g. scroll into the view, or focus).
 https://react-hook-form.com/faqs/
 
+?? Table generic!!!
+// with arrow function <T,>
+// with function :
+// function TableData<TItem>(props: TableDataProps<TItem>) {
+// Ref: https://www.totaltypescript.com/tips/use-generics-in-react-to-make-dynamic-and-flexible-components
+
+type TableDataProps<TItem extends Record<string, any>> = {
+data: TItem[];
+};
+
+/_
+The constraint TItem extends Record<string, any> ensures that TItem
+is an object type with string keys and any values.
+This allows TypeScript to infer the correct type when using data.map() and accessing item[key].
+_/
+
+type ItemValue = number | string | Date;
+
+type TableDataProps<TItem extends Record<string, ItemValue>> = {
+data: TItem[];
+};
+
+// const TableData = <TItem,>({ data }: TableDataProps<TItem>) => {
+// const TableData = <TItem extends Record<string, any>>({
+const TableData = <TItem extends Record<string, ItemValue>>({ data }: TableDataProps<TItem>) => {
+
+/\*
+
+      { {(Object.values(item) as Array<string | number>).map((value, index) => (
+        <td key={index}>{value}</td>
+      ))}
+
+<td>{item.startDate.toLocaleDateString('en-US')}</td>
+      <td>{item.dateOfBirth.toLocaleDateString('en-US')}</td>
+
+      */
+
 ## Optimization
 
 - Choix plugin : date = non!, select
