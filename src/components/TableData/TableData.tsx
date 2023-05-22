@@ -4,10 +4,11 @@ import { useState, useMemo } from 'react';
 import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
 import InputLength from './InputLength';
+import InputSearch from './InputSearch';
+import Pagination from './Pagination';
 
 // Import logic
-import { sortData, filterDataByLength, filterDataBySearch } from './dataUtils';
-import InputSearch from './InputSearch';
+import { sortData, filterDataBySearch } from './dataUtils';
 
 // Export types
 export type ItemValueType = number | string | Date | boolean;
@@ -35,7 +36,10 @@ const TableData = <
   const [sortKey, setSortKey] = useState('startDate');
   const [sortOrder, setSortOrder] = useState<SortOrderType>('desc');
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterLength, setFilterLength] = useState(0);
+  const [filterLength, setFilterLength] = useState(5);
+
+  const [totalEntries, setTotalEntries] = useState(data.length);
+  const [startIndex, setStartIndex] = useState(0);
 
   const currentData = useMemo(() => {
     let newData = [...data];
@@ -45,16 +49,16 @@ const TableData = <
       newData = filterDataBySearch(newData, searchTerm);
     }
 
-    // Apply length filter
-    if (filterLength > 0) {
-      newData = filterDataByLength(newData, filterLength);
-    }
+    // Apply pagination with number of entries
+    setTotalEntries(newData.length);
+    const endIndex = startIndex + filterLength;
+    newData = newData.slice(startIndex, endIndex);
 
     // Apply sort
     newData = sortData(newData, sortKey, sortOrder);
 
     return newData;
-  }, [data, sortKey, sortOrder, searchTerm, filterLength]);
+  }, [data, sortKey, sortOrder, searchTerm, filterLength, startIndex]);
 
   // ?useCallback
   const onSort = (key: string) => {
@@ -70,19 +74,22 @@ const TableData = <
     setFilterLength(length);
   };
 
+  const onPage = (index: number) => {
+    setStartIndex(index);
+  };
+
   return (
     <div className="my-8">
       <div className="flex justify-between">
         <InputLength onChange={onLength} />
         <InputSearch onChange={onSearch} />
       </div>
-
       <table className="w-full my-8">
         <thead className="border-b">
           <tr>
-            {headers.map((col, index) => (
+            {headers.map((col) => (
               <TableHeaderCell
-                key={index}
+                key={col.key}
                 col={col}
                 sortKey={sortKey}
                 sortOrder={sortOrder}
@@ -101,6 +108,11 @@ const TableData = <
           ))}
         </tbody>
       </table>
+      <Pagination
+        totalEntries={totalEntries}
+        entriesPerPage={filterLength}
+        onChange={onPage}
+      />
     </div>
   );
 };

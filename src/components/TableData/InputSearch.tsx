@@ -1,8 +1,8 @@
-type InputSearchType = {
+type InputSearchProps = {
   onChange: (term: string) => void;
 };
 
-const InputSearch = ({ onChange }: InputSearchType) => {
+const InputSearch = ({ onChange }: InputSearchProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const term = event.target.value;
     onChange(term); //if (term.length > 0)

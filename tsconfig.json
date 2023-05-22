@@ -17,11 +17,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
 
     /* Zup recommandations */
-    "strictNullChecks": true,
-    "strictFunctionTypes": false
+    // "strictNullChecks": true,
+    // "strictFunctionTypes": false
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

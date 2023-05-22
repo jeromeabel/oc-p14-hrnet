@@ -1,8 +1,8 @@
-type InputLengthType = {
+type InputLengthProps = {
   onChange: (length: number) => void;
 };
 
-const InputLength = ({ onChange }: InputLengthType) => {
+const InputLength = ({ onChange }: InputLengthProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const inputValue = event.target.value;
     const parsedValue = parseInt(inputValue, 10); // integer
@@ -16,11 +16,10 @@ const InputLength = ({ onChange }: InputLengthType) => {
         Show:
       </label>
       <select className="p-1" id="filterSelect" onChange={handleChange}>
-        <option value="0">All</option>
-        <option>2</option>
-        <option>4</option>
-        <option>6</option>
-        <option>8</option>
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>25</option>
       </select>
       <span>entries</span>
     </div>
@@ -28,3 +27,5 @@ const InputLength = ({ onChange }: InputLengthType) => {
 };
 
 export default InputLength;
+
+/* <option value="0">All</option> 10 25 50 100 */
