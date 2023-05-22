@@ -4,7 +4,7 @@ import {
   mockData,
   mockDataHeaders,
   HeaderType,
-} from '../data/mockData';
+} from '../data/mockData1';
 
 const View = () => {
   return (

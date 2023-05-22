@@ -1,5 +1,24 @@
 import { AddFormType } from '../types/types';
 
+export type HeaderType = {
+  key: keyof AddFormType;
+  label: string;
+};
+
+export type ItemType = AddFormType;
+
+export const mockDataHeaders: HeaderType[] = [
+  { key: 'firstName', label: 'First name' },
+  { key: 'lastName', label: 'Last name' },
+  { key: 'dateOfBirth', label: 'Date of birth' },
+  { key: 'startDate', label: 'Start date' },
+  { key: 'street', label: 'Street' },
+  { key: 'city', label: 'City' },
+  { key: 'state', label: 'State' },
+  { key: 'zipCode', label: 'Zip code' },
+  { key: 'department', label: 'Department' },
+];
+
 export const mockData: AddFormType[] = [
   {
     firstName: 'John',

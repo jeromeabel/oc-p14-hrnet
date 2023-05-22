@@ -12,7 +12,7 @@ export type ItemType = {
   department: string;
 };
 
-// type ItemType = {
+// export type ItemType = {
 //   firstName: string;
 //   lastName: string;
 //   dateOfBirth: Date;
@@ -32,12 +32,12 @@ export type HeaderType = {
 export const mockDataHeaders: HeaderType[] = [
   { key: 'firstName', label: 'First name' },
   { key: 'lastName', label: 'Last name' },
-  { key: 'startDate', label: 'Start date' },
   { key: 'dateOfBirth', label: 'Date of birth' },
+  { key: 'startDate', label: 'Start date' },
   { key: 'street', label: 'Street' },
   { key: 'city', label: 'City' },
-  { key: 'zipCode', label: 'Zip code' },
   { key: 'state', label: 'State' },
+  { key: 'zipCode', label: 'Zip code' },
   { key: 'department', label: 'Department' },
 ];
 
@@ -84,7 +84,7 @@ export const mockData: ItemType[] = [
     city: 'Los Angeles',
     state: 'CA',
     zipCode: '90001',
-    department: 'Engineering',
+    department: 'Marketing',
   },
   {
     firstName: 'William',
@@ -95,7 +95,7 @@ export const mockData: ItemType[] = [
     city: 'Seattle',
     state: 'WA',
     zipCode: '98101',
-    department: 'Finance',
+    department: 'Sales',
   },
   {
     firstName: 'Olivia',
@@ -117,7 +117,7 @@ export const mockData: ItemType[] = [
     city: 'Miami',
     state: 'FL',
     zipCode: '33101',
-    department: 'Operations',
+    department: 'Engineering',
   },
   {
     firstName: 'Sophia',
@@ -128,6 +128,6 @@ export const mockData: ItemType[] = [
     city: 'Dallas',
     state: 'TX',
     zipCode: '75201',
-    department: 'Customer Service',
+    department: 'Engineering',
   },
 ];
