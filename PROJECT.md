@@ -36,8 +36,11 @@ My goal is to update HRnet and convert it to React.
     - [x] Customized Select component
     - [x] Modal window
     - [ ] Datepicker component
-  - [ ] Employees list Page
-    - [ ] Table Component / pagination
+  - [ ] Employees list Page : Table Component
+    - [ ] Display headers
+    - [ ] Display rows
+    - [ ] Sort Table
+    - [ ] Button sort table
   - [ ] Error Page
   - [ ] Add a state management system : useContext
   - [ ] Responsive
