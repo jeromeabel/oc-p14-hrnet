@@ -73,7 +73,7 @@ export const mockData: AddFormType[] = [
     city: 'Seattle',
     state: 'WA',
     zipCode: 98101,
-    department: 'Finance',
+    department: 'Engineering',
   },
   {
     firstName: 'Olivia',
@@ -84,7 +84,7 @@ export const mockData: AddFormType[] = [
     city: 'San Francisco',
     state: 'CA',
     zipCode: 94102,
-    department: 'Human Resources',
+    department: 'Sales',
   },
   {
     firstName: 'James',
@@ -95,7 +95,7 @@ export const mockData: AddFormType[] = [
     city: 'Miami',
     state: 'FL',
     zipCode: 33101,
-    department: 'Operations',
+    department: 'Sales',
   },
   {
     firstName: 'Sophia',
@@ -106,6 +106,6 @@ export const mockData: AddFormType[] = [
     city: 'Dallas',
     state: 'TX',
     zipCode: 75201,
-    department: 'Customer Service',
+    department: 'Engineering',
   },
 ];
