@@ -1,4 +1,3 @@
-import React from 'react';
 import { ItemValueType, RecordItemType } from './TableData';
 
 type TableCellProps = {
@@ -6,7 +5,7 @@ type TableCellProps = {
   keyName: string;
 };
 
-const TableCell: React.FC<TableCellProps> = ({ item, keyName }) => {
+const TableCell = ({ item, keyName }: TableCellProps) => {
   const renderCellValue = (value: ItemValueType) => {
     if (typeof value !== 'object' || !(value instanceof Date)) {
       return String(value);
@@ -15,7 +14,9 @@ const TableCell: React.FC<TableCellProps> = ({ item, keyName }) => {
     }
   };
 
-  return <td>{renderCellValue(item[keyName])}</td>;
+  return (
+    <td className="whitespace-nowrap">{renderCellValue(item[keyName])}</td>
+  );
 };
 
 export default TableCell;

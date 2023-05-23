@@ -1,17 +1,6 @@
-export type Option = {
-  value: string;
-  label: string;
-};
+import { OptionsType } from '../types';
 
-export const departments: Option[] = [
-  { label: 'Sales', value: 'Sales' },
-  { label: 'Marketing', value: 'Marketing' },
-  { label: 'Engineering', value: 'Engineering' },
-  { label: 'Human Resources', value: 'Human Resources' },
-  { label: 'Legal', value: 'Legal' },
-];
-
-export const states: Option[] = [
+export const states: OptionsType = [
   {
     label: 'Alabama',
     value: 'AL',

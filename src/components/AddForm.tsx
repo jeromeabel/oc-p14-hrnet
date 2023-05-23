@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { AddFormType, addFormSchema } from '../types/types';
-import { departments, states } from '../data/data';
+import { EmployeeType } from '../types';
+import { employeeSchema } from '../schemas/employeeSchema';
+import { departments } from '../data/departments';
+import { states } from '../data/states';
 import Select from './Select';
 import Input from './Input';
 
@@ -19,7 +21,7 @@ const defaultData = {
 };
 
 type AddFormProps = {
-  onSubmit: (data: AddFormType) => void;
+  onSubmit: (data: EmployeeType) => void;
 };
 
 const AddForm = ({ onSubmit }: AddFormProps) => {
@@ -27,8 +29,8 @@ const AddForm = ({ onSubmit }: AddFormProps) => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<AddFormType>({
-    resolver: zodResolver(addFormSchema),
+  } = useForm<EmployeeType>({
+    resolver: zodResolver(employeeSchema),
     mode: 'all',
     defaultValues: defaultData,
   });

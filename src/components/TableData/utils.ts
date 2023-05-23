@@ -1,6 +1,6 @@
 import { SortOrderType, RecordItemType } from './TableData';
 
-export const sortData = <TItem extends RecordItemType>(
+export const sortData = <TItem>(
   data: TItem[],
   key: keyof TItem,
   order: SortOrderType
@@ -8,15 +8,13 @@ export const sortData = <TItem extends RecordItemType>(
   const newData = [...data].sort((a, b) => {
     return a[key] < b[key] ? 1 : -1; // desc order
   });
-
   if (order === 'asc') {
     newData.reverse();
   }
-
   return newData;
 };
 
-export const filterDataByLength = <TItem extends RecordItemType>(
+export const filterDataByLength = <TItem>(
   data: TItem[],
   length: number
 ): TItem[] => {

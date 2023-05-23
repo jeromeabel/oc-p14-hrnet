@@ -30,4 +30,4 @@ const InputEntries = ({ onChange }: InputEntriesProps) => {
 
 export default InputEntries;
 
-/* <option value="0">All</option> 10 25 50 100 */
+/* 10 25 50 100 */

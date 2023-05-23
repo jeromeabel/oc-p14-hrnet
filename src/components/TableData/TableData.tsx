@@ -8,7 +8,7 @@ import InputSearch from './InputSearch';
 import PaginationButtons from './PaginationButtons';
 
 // Import logic
-import { sortData, filterDataBySearch } from './dataUtils';
+import { sortData, filterDataBySearch } from './utils';
 
 // Export types
 export type ItemValueType = number | string | Date | boolean;
@@ -22,6 +22,7 @@ type TableDataProps<
 > = {
   data: TItem[];
   headers: THeader[];
+  sortBy?: string;
 };
 
 const TableData = <
@@ -30,9 +31,10 @@ const TableData = <
 >({
   data,
   headers,
+  sortBy = 'startDate',
 }: TableDataProps<TItem, THeader>) => {
   // State variables for the filters
-  const [sortKey, setSortKey] = useState('startDate');
+  const [sortKey, setSortKey] = useState(sortBy);
   const [sortOrder, setSortOrder] = useState<SortOrderType>('desc');
   const [searchTerm, setSearchTerm] = useState('');
   const [entriesPerPage, setEntriesPerPage] = useState(5);
@@ -91,30 +93,33 @@ const TableData = <
         <InputEntries onChange={handleEntries} />
         <InputSearch onChange={handleSearch} />
       </div>
-      <table className="w-full my-8">
-        <thead className="border-b">
-          <tr>
-            {headers.map((col) => (
-              <TableHeaderCell
-                key={col.key}
-                col={col}
-                sortKey={sortKey}
-                sortOrder={sortOrder}
-                onSort={handleSort}
-              />
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedData.data.map((item, index) => (
-            <tr key={index}>
-              {Object.keys(item).map((key) => (
-                <TableCell key={key} item={item} keyName={key} />
+      <div className="my-10 p-4 rounded shadow-lg overflow-auto">
+        <table className="w-full">
+          <thead className="">
+            <tr>
+              {headers.map((header, index) => (
+                <TableHeaderCell
+                  key={index}
+                  cellKey={header.key}
+                  cellLabel={header.label}
+                  sortKey={sortKey}
+                  sortOrder={sortOrder}
+                  onSort={handleSort}
+                />
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="text-sm text-gray-700 divide-y-2 divide-gray-100">
+            {paginatedData.data.map((item, index) => (
+              <tr key={index}>
+                {Object.keys(item).map((key) => (
+                  <TableCell key={key} item={item} keyName={key} />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="flex justify-between">
         <div>
           Showing {paginatedData.startEntry + 1} to {paginatedData.endEntry} of{' '}
