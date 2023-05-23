@@ -3,9 +3,9 @@ import { useState, useMemo } from 'react';
 // Import components
 import TableHeaderCell from './TableHeaderCell';
 import TableCell from './TableCell';
-import InputLength from './InputLength';
+import InputEntries from './InputEntries';
 import InputSearch from './InputSearch';
-import Pagination from './Pagination';
+import PaginationButtons from './PaginationButtons';
 
 // Import logic
 import { sortData, filterDataBySearch } from './dataUtils';
@@ -24,7 +24,6 @@ type TableDataProps<
   headers: THeader[];
 };
 
-// Main component
 const TableData = <
   TItem extends RecordItemType,
   THeader extends RecordHeaderType
@@ -32,57 +31,65 @@ const TableData = <
   data,
   headers,
 }: TableDataProps<TItem, THeader>) => {
-  //State variables for the filters
+  // State variables for the filters
   const [sortKey, setSortKey] = useState('startDate');
   const [sortOrder, setSortOrder] = useState<SortOrderType>('desc');
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterLength, setFilterLength] = useState(5);
+  const [entriesPerPage, setEntriesPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const [totalEntries, setTotalEntries] = useState(data.length);
-  const [startIndex, setStartIndex] = useState(0);
+  // Memo functions : search, sort, pagination
+  const filteredData = useMemo(() => {
+    return filterDataBySearch(data, searchTerm);
+  }, [data, searchTerm]);
 
-  const currentData = useMemo(() => {
-    let newData = [...data];
+  const sortedData = useMemo(() => {
+    return sortData(filteredData, sortKey, sortOrder);
+  }, [filteredData, sortKey, sortOrder]);
 
-    // Apply search filter
-    if (searchTerm) {
-      newData = filterDataBySearch(newData, searchTerm);
-    }
+  const totalPages = useMemo(() => {
+    return Math.ceil(sortedData.length / entriesPerPage);
+  }, [sortedData.length, entriesPerPage]);
 
-    // Apply pagination with number of entries
-    setTotalEntries(newData.length);
-    const endIndex = startIndex + filterLength;
-    newData = newData.slice(startIndex, endIndex);
+  const paginatedData = useMemo(() => {
+    const startEntry = (currentPage - 1) * entriesPerPage;
+    const endEntry = Math.min(startEntry + entriesPerPage, sortedData.length);
+    const dataSlice = sortedData.slice(startEntry, endEntry);
+    return {
+      data: dataSlice,
+      startEntry,
+      endEntry,
+      totalEntries: sortedData.length,
+    };
+  }, [sortedData, entriesPerPage, currentPage]);
 
-    // Apply sort
-    newData = sortData(newData, sortKey, sortOrder);
-
-    return newData;
-  }, [data, sortKey, sortOrder, searchTerm, filterLength, startIndex]);
-
-  // ?useCallback
-  const onSort = (key: string) => {
-    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  // Event functions
+  const handleSort = (key: string) => {
     setSortKey(key);
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
   };
 
-  const onSearch = (searchTerm: string) => {
-    setSearchTerm(searchTerm);
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+    setCurrentPage(1);
   };
 
-  const onLength = (length: number) => {
-    setFilterLength(length);
+  const handleEntries = (length: number) => {
+    const currentEntryIndex = (currentPage - 1) * entriesPerPage;
+    const newPageNumber = Math.floor(currentEntryIndex / length) + 1;
+    setEntriesPerPage(length);
+    setCurrentPage(newPageNumber); // find the accurate page number
   };
 
-  const onPage = (index: number) => {
-    setStartIndex(index);
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
     <div className="my-8">
       <div className="flex justify-between">
-        <InputLength onChange={onLength} />
-        <InputSearch onChange={onSearch} />
+        <InputEntries onChange={handleEntries} />
+        <InputSearch onChange={handleSearch} />
       </div>
       <table className="w-full my-8">
         <thead className="border-b">
@@ -93,13 +100,13 @@ const TableData = <
                 col={col}
                 sortKey={sortKey}
                 sortOrder={sortOrder}
-                onSort={onSort}
+                onSort={handleSort}
               />
             ))}
           </tr>
         </thead>
         <tbody>
-          {currentData.map((item, index) => (
+          {paginatedData.data.map((item, index) => (
             <tr key={index}>
               {Object.keys(item).map((key) => (
                 <TableCell key={key} item={item} keyName={key} />
@@ -108,11 +115,17 @@ const TableData = <
           ))}
         </tbody>
       </table>
-      <Pagination
-        totalEntries={totalEntries}
-        entriesPerPage={filterLength}
-        onChange={onPage}
-      />
+      <div className="flex justify-between">
+        <div>
+          Showing {paginatedData.startEntry + 1} to {paginatedData.endEntry} of{' '}
+          {paginatedData.totalEntries} entries
+        </div>
+        <PaginationButtons
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 };

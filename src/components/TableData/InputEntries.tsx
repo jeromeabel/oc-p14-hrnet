@@ -1,8 +1,8 @@
-type InputLengthProps = {
+type InputEntriesProps = {
   onChange: (length: number) => void;
 };
 
-const InputLength = ({ onChange }: InputLengthProps) => {
+const InputEntries = ({ onChange }: InputEntriesProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const inputValue = event.target.value;
     const parsedValue = parseInt(inputValue, 10); // integer
@@ -12,7 +12,7 @@ const InputLength = ({ onChange }: InputLengthProps) => {
   };
   return (
     <div className="flex gap-4 items-center">
-      <label htmlFor="filterSelect" aria-label="Select the lenght of the data">
+      <label htmlFor="filterSelect" aria-label="Select the number of entries">
         Show:
       </label>
       <select className="p-1" id="filterSelect" onChange={handleChange}>
@@ -20,12 +20,14 @@ const InputLength = ({ onChange }: InputLengthProps) => {
         <option>10</option>
         <option>15</option>
         <option>25</option>
+        <option>50</option>
+        <option>100</option>
       </select>
       <span>entries</span>
     </div>
   );
 };
 
-export default InputLength;
+export default InputEntries;
 
 /* <option value="0">All</option> 10 25 50 100 */

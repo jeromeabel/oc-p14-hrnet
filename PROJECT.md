@@ -36,11 +36,14 @@ My goal is to update HRnet and convert it to React.
     - [x] Customized Select component
     - [x] Modal window
     - [ ] Datepicker component
-  - [ ] Employees list Page : Table Component
-    - [ ] Display headers
-    - [ ] Display rows
-    - [ ] Sort Table
-    - [ ] Button sort table
+  - [x] Employees list Page : Table Component
+    - [x] Display headers
+    - [x] Display rows
+    - [x] Sort Table
+    - [x] Button sort table
+    - [x] Search Input
+    - [x] Number of entries
+    - [x] Pagination
   - [ ] Error Page
   - [ ] Add a state management system : useContext
   - [ ] Responsive
@@ -129,6 +132,13 @@ const TableData = <TItem extends Record<string, ItemValue>>({ data }: TableDataP
       <td>{item.dateOfBirth.toLocaleDateString('en-US')}</td>
 
       */
+
+
+
+
+      Sort : 		- https://www.youtube.com/watch?v=EaxC_kOG03E
+    	- https://www.smashingmagazine.com/2020/03/sortable-tables-react/
+    	- https://blog.logrocket.com/creating-react-sortable-table/
 
 ## Optimization
 
