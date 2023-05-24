@@ -10,10 +10,20 @@ const Header = () => {
         </Link>
         <ul className="flex gap-8">
           <li>
-            <NavLink to="/add">Add</NavLink>
+            <NavLink
+              to="/add"
+              className={'underline-offset-8 [&.active]:underline'}
+            >
+              Add
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/view">View</NavLink>
+            <NavLink
+              to="/view"
+              className={'underline-offset-8 [&.active]:underline'}
+            >
+              View
+            </NavLink>
           </li>
         </ul>
       </nav>
