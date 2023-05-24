@@ -44,22 +44,23 @@ My goal is to update HRnet and convert it to React.
     - [x] Search Input
     - [x] Number of entries
     - [x] Pagination
-  - [ ] Error Page
-  - [ ] Add a state management system : useContext
-  - [ ] Responsive
-  - [ ] Unit tests and manual tests
+  - [x] Error Page
+  - [x] Add a state management system : useContext
 
+- [ ] Unit tests and manual tests
 - [ ] Convert one JQuery plugins to React. The other in React or Library.
   - [ ] Guidelines only the UI code. Functional programming. Comments.
   - [ ] [date picker](https://github.com/xdan/datetimepicker) : html
-  - [ ] [modal](https://github.com/kylefox/jquery-modal)
-  - [ ] [select menu](https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js)
-  - [ ] [Data table](https://github.com/DataTables/DataTables)
+  - [x] [modal](https://github.com/kylefox/jquery-modal)
+  - [x] [select menu](https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js)
+  - [x] [Data table](https://github.com/DataTables/DataTables)
 - [ ] Export NPM
 - [ ] Performance tests with Lighthouse
+
   - [ ] Test the older version
   - [ ] Build and test the new one
   - [ ] Post the React component on npm as a package
+
 - [ ] Deliverables
 
 ## Journey
@@ -144,6 +145,8 @@ WARNING. zod.date ou zod.coerce.date
 input type=date += valueAsDate: true
 The specified value "Mon Jan 01 1900 00:09:21 GMT+0009 (heure normale d\u2019Europe centrale)" does not conform to the required format, "yyyy-MM-dd".
 
+?? est-ce que ça marche directement avec TypeScript ?
+
 solution zod en string ???
 startDate: z
 // .string()
@@ -185,5 +188,8 @@ zup : "strictNullChecks": true,
 
 projet14_Nom_Prenom_042023.zip :
 
-- Nom_Prénom_1_code_mmaaaa.txt : links main project github, plugin github, plugin npm
+- Nom_Prénom_1_code_mmaaaa.txt, links:
+  - github project
+  - github plugin
+  - plugin npm
 - Nom_Prénom_2_rapport_performance_mmaaaa.pdf : avant et après la conversion de la bibliothèque

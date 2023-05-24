@@ -31,15 +31,14 @@ const Add = () => {
       </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <h2>✅ Well done!</h2>
-        <p>Your form has been submitted successfully.</p>
+        <h2>✅ Data submitted</h2>
         {newEmployee && (
           <p>
-            The employee{' '}
+            The new employee{' '}
             <b>
               {newEmployee.firstName} {newEmployee.lastName}
             </b>{' '}
-            is added to the data.
+            is added.
           </p>
         )}
       </Modal>

@@ -41,3 +41,32 @@
     @apply border-b;
   }
 }
+
+/* Custom animation */
+.animate-opacity {
+  animation: animOpacity 450ms ease-in-out both;
+}
+
+.animate-y {
+  animation: animY 400ms 50ms ease-in-out both;
+}
+
+@keyframes animOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animY {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
