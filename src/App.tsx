@@ -1,9 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-// Pages
+// Shared Layout
 import Layout from './pages/Layout';
+
+// Pages
 import Home from './pages/Home';
-import Error404 from './pages/Error404';
+import NotFound from './pages/NotFound';
 import Add from './pages/Add';
 import View from './pages/View';
 
@@ -15,7 +17,7 @@ const App = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'add', element: <Add /> },
       { path: 'view', element: <View /> },
-      { path: '*', element: <Error404 /> },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ]);
