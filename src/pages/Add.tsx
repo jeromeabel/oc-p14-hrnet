@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
-import { AddFormType } from '../types/types';
+import { EmployeeType } from '../types';
 import AddForm from '../components/AddForm';
 import Modal from '../components/Modal';
+import { EmployeesContext } from '../context/employeeContext';
 
 const Add = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleFormSubmit = (data: AddFormType) => {
-    console.log(data);
+  const { updateEmployeesData } = useContext(EmployeesContext);
+
+  const handleFormSubmit = (data: EmployeeType) => {
+    updateEmployeesData(data);
     setIsModalOpen(true);
   };
 
@@ -24,7 +27,7 @@ const Add = () => {
       </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <h2>✅ Success!</h2>
+        <h2>✅ Well done!</h2>
         <p>Your form has been submitted successfully.</p>
       </Modal>
     </>

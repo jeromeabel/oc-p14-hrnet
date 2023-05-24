@@ -16,9 +16,7 @@ const InputEntries = ({ onChange }: InputEntriesProps) => {
         Show:
       </label>
       <select className="p-1" id="filterSelect" onChange={handleChange}>
-        <option>5</option>
         <option>10</option>
-        <option>15</option>
         <option>25</option>
         <option>50</option>
         <option>100</option>
@@ -29,5 +27,3 @@ const InputEntries = ({ onChange }: InputEntriesProps) => {
 };
 
 export default InputEntries;
-
-/* 10 25 50 100 */

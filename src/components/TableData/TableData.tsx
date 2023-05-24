@@ -37,7 +37,7 @@ const TableData = <
   const [sortKey, setSortKey] = useState(sortBy);
   const [sortOrder, setSortOrder] = useState<SortOrderType>('desc');
   const [searchTerm, setSearchTerm] = useState('');
-  const [entriesPerPage, setEntriesPerPage] = useState(5);
+  const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   // Memo functions : search, sort, pagination
@@ -64,6 +64,9 @@ const TableData = <
       totalEntries: sortedData.length,
     };
   }, [sortedData, entriesPerPage, currentPage]);
+
+  let startEntry = paginatedData.startEntry + 1;
+  if (paginatedData.totalEntries === 0) startEntry = 0;
 
   // Event functions
   const handleSort = (key: string) => {
@@ -122,7 +125,7 @@ const TableData = <
       </div>
       <div className="flex justify-between">
         <div>
-          Showing {paginatedData.startEntry + 1} to {paginatedData.endEntry} of{' '}
+          Showing {startEntry} to {paginatedData.endEntry} of{' '}
           {paginatedData.totalEntries} entries
         </div>
         <PaginationButtons
