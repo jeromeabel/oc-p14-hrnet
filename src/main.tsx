@@ -5,7 +5,7 @@ import { RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
 
 // Context state management
-import { EmployeesProvider } from './context/employeeContext.tsx';
+import { EmployeesProvider } from './context/EmployeesContext.tsx';
 
 // Tailwind setup
 import './styles/index.css';

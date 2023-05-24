@@ -1,17 +1,21 @@
 import { useContext, useState } from 'react';
 
+// Types and Context
+import { EmployeesContext } from '../context/EmployeesContext';
 import { EmployeeType } from '../types';
-import AddForm from '../components/AddForm';
+
+// Components
+import AddEmployeeForm from '../components/AddEmployeeForm/AddEmployeeForm';
 import Modal from '../components/Modal';
-import { EmployeesContext } from '../context/employeeContext';
 
 const Add = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [newEmployee, setNewEmployee] = useState<EmployeeType>();
+  const { addEmployee } = useContext(EmployeesContext);
 
-  const { updateEmployeesData } = useContext(EmployeesContext);
-
-  const handleFormSubmit = (data: EmployeeType) => {
-    updateEmployeesData(data);
+  const handleFormSubmit = (employee: EmployeeType) => {
+    addEmployee(employee);
+    setNewEmployee(employee);
     setIsModalOpen(true);
   };
 
@@ -23,12 +27,21 @@ const Add = () => {
     <>
       <h1>Add a new employee</h1>
       <div className="w-[500px] mx-auto">
-        <AddForm onSubmit={handleFormSubmit} />
+        <AddEmployeeForm onSubmit={handleFormSubmit} />
       </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2>✅ Well done!</h2>
         <p>Your form has been submitted successfully.</p>
+        {newEmployee && (
+          <p>
+            The employee{' '}
+            <b>
+              {newEmployee.firstName} {newEmployee.lastName}
+            </b>{' '}
+            is added to the data.
+          </p>
+        )}
       </Modal>
     </>
   );
