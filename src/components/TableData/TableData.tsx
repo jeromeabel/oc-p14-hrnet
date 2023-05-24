@@ -96,9 +96,9 @@ const TableData = <
         <InputEntries onChange={handleEntries} />
         <InputSearch onChange={handleSearch} />
       </div>
-      <div className="my-10 p-4 rounded shadow-lg overflow-auto">
+      <div className="my-10 rounded-lg shadow-lg overflow-auto">
         <table className="w-full">
-          <thead className="">
+          <thead>
             <tr>
               {headers.map((header, index) => (
                 <TableHeaderCell
@@ -112,9 +112,9 @@ const TableData = <
               ))}
             </tr>
           </thead>
-          <tbody className="text-sm text-gray-700 divide-y-2 divide-gray-100">
+          <tbody className="text-sm text-gray-700">
             {paginatedData.data.map((item, index) => (
-              <tr key={index}>
+              <tr key={index} className="even:bg-slate-50">
                 {Object.keys(item).map((key) => (
                   <TableCell key={key} item={item} keyName={key} />
                 ))}

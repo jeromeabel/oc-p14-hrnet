@@ -15,7 +15,7 @@ const TableCell = ({ item, keyName }: TableCellProps) => {
   };
 
   return (
-    <td className="whitespace-nowrap">{renderCellValue(item[keyName])}</td>
+    <td className="px-2 whitespace-nowrap">{renderCellValue(item[keyName])}</td>
   );
 };
 

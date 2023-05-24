@@ -75,7 +75,7 @@ const TableHeaderCell = ({
   };
 
   return (
-    <th className="px-0 py-4 font-semibold tracking-wide">
+    <th className="px-2 py-4 font-semibold tracking-wide">
       <button
         className=" hover:text-primary hover:cursor-pointer flex gap-2 items-center"
         onClick={handleClick}
