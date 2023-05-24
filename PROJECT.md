@@ -140,6 +140,23 @@ const TableData = <TItem extends Record<string, ItemValue>>({ data }: TableDataP
     	- https://www.smashingmagazine.com/2020/03/sortable-tables-react/
     	- https://blog.logrocket.com/creating-react-sortable-table/
 
+WARNING. zod.date ou zod.coerce.date
+input type=date += valueAsDate: true
+The specified value "Mon Jan 01 1900 00:09:21 GMT+0009 (heure normale d\u2019Europe centrale)" does not conform to the required format, "yyyy-MM-dd".
+
+solution zod en string ???
+startDate: z
+// .string()
+// .refine((value) => {
+// const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+// return dateRegex.test(value);
+// }, 'Invalid date format ssssss')
+// .refine((value) => {
+// const date = new Date(value);
+// return !isNaN(date.getTime());
+// }, 'Invalid date ssssssss'),
+// .min(new Date('2000-01-01')),
+
 ## Optimization
 
 - Choix plugin : date = non!, select

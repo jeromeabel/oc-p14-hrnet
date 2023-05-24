@@ -1,3 +1,5 @@
+// Some mock data
+
 import { EmployeesType } from '../types';
 
 export const employees: EmployeesType = [
@@ -276,15 +278,15 @@ export const employees: EmployeesType = [
     zipCode: 27601,
     department: 'Legal',
   },
-  // {
-  //   firstName: 'Harper',
-  //   lastName: 'Williams',
-  //   dateOfBirth: new Date('1993-12-10'),
-  //   startDate: new Date('2018-07-14'),
-  //   street: '555 Oak Street',
-  //   city: 'Indianapolis',
-  //   state: 'IN',
-  //   zipCode: 46201,
-  //   department: 'Marketing',
-  // },
+  {
+    firstName: 'Harper',
+    lastName: 'Williams',
+    dateOfBirth: new Date('1993-12-10'),
+    startDate: new Date('2018-07-14'),
+    street: '555 Oak Street',
+    city: 'Indianapolis',
+    state: 'IN',
+    zipCode: 46201,
+    department: 'Marketing',
+  },
 ];

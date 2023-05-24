@@ -40,9 +40,4 @@
   tr {
     @apply border-b;
   }
-  /* input {
-    @apply p-3;
-    border-radius: 0.75rem;
-    background-color: rgb(158, 157, 157);
-  } */
 }
