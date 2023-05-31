@@ -21,7 +21,9 @@ The main tasks:
 - [ ] Unit tests and manual tests
 - [ ] Performance report between old and new version
 
-## ✨ Interface
+## ✨ Demo
+
+- [jeromeabel.github.io/oc-p14-hrnet](https://jeromeabel.github.io/oc-p14-hrnet/)
 
 ![oc-p14-hrnet screen](screen.png)
 
