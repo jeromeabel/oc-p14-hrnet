@@ -3,8 +3,15 @@ Tailwind setup
 Some additional rules are stored in "tailwind.config.js", like colors, font and centering containers
 */
 
-/* Import Noto font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+/* noto-serif-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/noto-serif-v21-latin-regular.woff2') format('woff2'),
+    url('../fonts/noto-serif-v21-latin-regular.ttf') format('truetype');
+}
 
 /* Tailwind base */
 @tailwind base;
