@@ -23,17 +23,20 @@ import NotFound from './pages/NotFound';
  *
  * @type {React.Component}
  */
-const App = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'add', element: <Add /> },
-      { path: 'view', element: <View /> },
-      { path: '*', element: <NotFound /> },
-    ],
-  },
-]);
+const App = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'add', element: <Add /> },
+        { path: 'view', element: <View /> },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
+  ],
+  { basename: '/oc-p14-hrnet' }
+);
 
 export default App;
