@@ -1,6 +1,8 @@
 import { PropsWithChildren, createContext, useContext, useState } from 'react';
 import { EmployeeType, EmployeesType } from '../types';
 
+import { employees as defaultEmployees } from '../data/employees'; // mock data to test TableData
+
 type EmployeesContextProps = {
   employees: EmployeesType;
   addEmployee: (newEmployee: EmployeeType) => void;
@@ -22,7 +24,7 @@ export const EmployeesContext = createContext<EmployeesContextProps>({
 
 export const EmployeesProvider = ({ children }: PropsWithChildren) => {
   // #2: Define state and update function
-  const [employees, setEmployees] = useState<EmployeesType>([]);
+  const [employees, setEmployees] = useState<EmployeesType>(defaultEmployees);
 
   const addEmployee = (newEmployee: EmployeeType) => {
     setEmployees([...employees, newEmployee]);

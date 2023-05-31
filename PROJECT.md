@@ -160,6 +160,11 @@ startDate: z
 // }, 'Invalid date ssssssss'),
 // .min(new Date('2000-01-01')),
 
+OLD TABLE DATA
+//import { EmployeeType, EmployeeHeaderType } from '../types';
+// import TableData from '../components/TableData/TableData';
+// <TableData<EmployeeType, EmployeeHeaderType> data={employees} headers={headers} />
+
 ## Optimization
 
 - Choix plugin : date = non!, select

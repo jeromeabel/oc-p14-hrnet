@@ -1,3 +1,4 @@
+// Lib
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -80,7 +81,6 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
           label="Date of birth"
           error={errors.dateOfBirth?.message}
         />
-
         <Input
           {...register('startDate', { valueAsDate: true })}
           type="date"
@@ -90,7 +90,6 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
 
         <fieldset className="p-4 border">
           <legend>Address</legend>
-
           <Input
             {...register('street')}
             label="Street"
@@ -101,14 +100,12 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
             label="City"
             error={errors.city?.message}
           />
-
           <Select
             {...register('state')}
             label="State"
             error={errors.state?.message}
             options={states}
           />
-
           <Input
             {...register('zipCode', { valueAsNumber: true })}
             type="number"

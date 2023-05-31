@@ -1,7 +1,7 @@
 import { EmployeeType } from './employeeSchema';
 
 export type EmployeeHeaderType = {
-  key: keyof EmployeeType;
+  name: keyof EmployeeType;
   label: string;
 };
 

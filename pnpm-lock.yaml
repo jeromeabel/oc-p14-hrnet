@@ -4,6 +4,9 @@ dependencies:
   '@hookform/resolvers':
     specifier: ^3.1.0
     version: 3.1.0(react-hook-form@7.43.9)
+  ja-react-table:
+    specifier: ^1.0.4
+    version: 1.0.4
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1461,6 +1464,10 @@ packages:
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
+
+  /ja-react-table@1.0.4:
+    resolution: {integrity: sha512-1ZiiO8V5jE8UC4WrV27kdHlauILYHwUEoGt2fhYxIZkw75xjzChip+4wMNSxITnW2pvTCHPPASJ4yCvx8Wc02w==}
+    dev: false
 
   /jiti@1.18.2:
     resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}

@@ -1,20 +1,20 @@
-import TableData from '../components/TableData/TableData';
-
-import { EmployeeType, EmployeeHeaderType } from '../types';
-// import { employees } from '../data/employees'; // mock data to test TableData
-import { headers } from '../data/headers';
+// Lib
 import { useContext } from 'react';
+import { Table } from 'ja-react-table';
+
+import '../../node_modules/ja-react-table/dist/style.css';
+import { EmployeeType } from '../types';
+
+// Context and data
 import { EmployeesContext } from '../context/EmployeesContext';
+import { headers } from '../data/headers';
 
 const View = () => {
   const { employees } = useContext(EmployeesContext);
   return (
     <div>
-      <h1>Current employees</h1>
-      <TableData<EmployeeType, EmployeeHeaderType>
-        data={employees}
-        headers={headers}
-      />
+      <h1 className="mb-8">Current employees</h1>
+      <Table<EmployeeType> headers={headers} items={employees} />
     </div>
   );
 };

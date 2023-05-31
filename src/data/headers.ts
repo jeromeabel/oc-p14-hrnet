@@ -1,13 +1,13 @@
 import { EmployeeHeadersType } from '../types';
 
 export const headers: EmployeeHeadersType = [
-  { key: 'firstName', label: 'First name' },
-  { key: 'lastName', label: 'Last name' },
-  { key: 'dateOfBirth', label: 'Date of birth' },
-  { key: 'startDate', label: 'Start date' },
-  { key: 'street', label: 'Street' },
-  { key: 'city', label: 'City' },
-  { key: 'state', label: 'State' },
-  { key: 'zipCode', label: 'Zip code' },
-  { key: 'department', label: 'Department' },
+  { name: 'firstName', label: 'First name' },
+  { name: 'lastName', label: 'Last name' },
+  { name: 'dateOfBirth', label: 'Date of birth' },
+  { name: 'startDate', label: 'Start date' },
+  { name: 'street', label: 'Street' },
+  { name: 'city', label: 'City' },
+  { name: 'state', label: 'State' },
+  { name: 'zipCode', label: 'Zip code' },
+  { name: 'department', label: 'Department' },
 ];
