@@ -16,7 +16,7 @@ import companyImg from '/company.svg';
  */
 const Home = () => {
   return (
-    <div className="h-full flex flex-col-reverse justify-between lg:flex-row">
+    <div className="h-full flex flex-col-reverse justify-center lg:justify-between lg:flex-row">
       <div>
         <h1>Welcome</h1>
         <p className="text-3xl py-4">
@@ -28,8 +28,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="lg:w-full h-full grid place-items-center">
-        <img className="lg:w-1/2" src={companyImg} alt="Wealth Health Logo" />
+      <div className="lg:w-full lg:h-full grid place-items-center">
+        <img
+          className="lg:w-1/2"
+          src={companyImg}
+          alt="Wealth Health Logo"
+          width={180}
+          height={180}
+        />
       </div>
     </div>
   );

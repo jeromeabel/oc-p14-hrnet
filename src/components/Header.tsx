@@ -17,7 +17,7 @@ const Header = () => {
     <header className="py-8 shadow-md">
       <nav className="flex justify-between container">
         <Link to="/">
-          <img src={logo} alt="HRnet Logo" />
+          <img src={logo} alt="HRnet Logo" width={117} height={29} />
         </Link>
         <ul className="flex gap-8">
           <li>

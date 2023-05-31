@@ -20,7 +20,7 @@ Some additional rules are stored in "tailwind.config.js", like colors, font and 
   h5,
   h6 {
     @apply font-serif;
-    @apply text-primary;
+    @apply text-heading;
   }
   h1 {
     @apply text-5xl;
