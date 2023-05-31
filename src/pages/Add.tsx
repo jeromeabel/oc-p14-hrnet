@@ -10,10 +10,7 @@
 import { useState } from 'react';
 
 // Types and Context
-import {
-  EmployeesContext,
-  useEmployeesContext,
-} from '../context/EmployeesContext';
+import { useEmployeesContext } from '../context/EmployeesContext';
 import { EmployeeType } from '../types';
 
 // Components
