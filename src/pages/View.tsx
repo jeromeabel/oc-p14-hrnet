@@ -7,7 +7,6 @@
  */
 
 // Lib
-import { useContext } from 'react';
 import { Table } from 'ja-react-table';
 
 // Style for ja-react-table

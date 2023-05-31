@@ -33,18 +33,6 @@ const defaultEmployee = {
   department: 'Legal',
 };
 
-const voidEmployee = {
-  firstName: '',
-  lastName: '',
-  dateOfBirth: new Date('1900-01-01'),
-  startDate: new Date('1900-01-01'),
-  street: '',
-  city: '',
-  state: '',
-  zipCode: 0,
-  department: '',
-};
-
 /**
  * Props for the AddEmployeeForm component.
  *
