@@ -7,10 +7,13 @@
  */
 
 // Lib
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 // Types and Context
-import { EmployeesContext } from '../context/EmployeesContext';
+import {
+  EmployeesContext,
+  useEmployeesContext,
+} from '../context/EmployeesContext';
 import { EmployeeType } from '../types';
 
 // Components
@@ -28,7 +31,7 @@ const Add = () => {
   const [isEmployeeNew, setIsEmployeeNew] = useState<boolean>(false);
   const [newEmployee, setNewEmployee] = useState<EmployeeType>();
 
-  const { addEmployee, employees } = useContext(EmployeesContext);
+  const { addEmployee, employees } = useEmployeesContext();
 
   /**
    * Handles form submission.

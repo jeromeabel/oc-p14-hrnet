@@ -14,7 +14,10 @@ import { Table } from 'ja-react-table';
 import '../../node_modules/ja-react-table/dist/style.css';
 
 // Context and data
-import { EmployeesContext } from '../context/EmployeesContext';
+import {
+  EmployeesContext,
+  useEmployeesContext,
+} from '../context/EmployeesContext';
 import { EmployeeType } from '../types';
 import { headers } from '../data/headers';
 
@@ -24,7 +27,7 @@ import { headers } from '../data/headers';
  * @returns {JSX.Element} The rendered View page content.
  */
 const View = () => {
-  const { employees } = useContext(EmployeesContext);
+  const { employees } = useEmployeesContext();
   return (
     <div>
       <h1 className="mb-8">Current employees</h1>
