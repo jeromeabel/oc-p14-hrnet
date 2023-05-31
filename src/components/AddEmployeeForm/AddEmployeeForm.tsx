@@ -1,3 +1,9 @@
+/**
+ * AddEmployeeForm component for rendering a form to add a new employee.
+ *
+ * @module AddEmployeeForm
+ */
+
 // Lib
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -39,10 +45,23 @@ const voidEmployee = {
   department: '',
 };
 
+/**
+ * Props for the AddEmployeeForm component.
+ *
+ * @typedef {Object} AddEmployeeFormProps
+ * @property {Function} onSubmit - The function to handle form submission.
+ * @property {EmployeeType} onSubmit.data - The employee data submitted.
+ */
 type AddEmployeeFormProps = {
   onSubmit: (data: EmployeeType) => void;
 };
 
+/**
+ * AddEmployeeForm component for rendering a form to add a new employee.
+ *
+ * @param {AddEmployeeFormProps} props - The component props.
+ * @returns {JSX.Element} The rendered AddEmployeeForm component.
+ */
 const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
   const {
     register,

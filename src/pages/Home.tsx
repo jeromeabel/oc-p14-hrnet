@@ -1,6 +1,19 @@
+/**
+ * Home page component.
+ *
+ * Renders the home page content with a welcome message and CTA buttons.
+ *
+ * @module Home
+ */
+
 import CTA from '../components/CTA';
 import companyImg from '/company.svg';
 
+/**
+ * The Home page component.
+ *
+ * @returns {JSX.Element} The rendered Home page content.
+ */
 const Home = () => {
   return (
     <div className="h-full flex">

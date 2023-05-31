@@ -1,3 +1,8 @@
+/**
+ * Table Data - first attempts
+ * New version is in the npm package "ja-react-table"
+ */
+
 import { useState, useMemo } from 'react';
 
 // Import components

@@ -1,5 +1,18 @@
+/**
+ * NotFound page component.
+ *
+ * Renders the NotFound page content for when a page is not found.
+ *
+ * @module NotFound
+ */
+
 import CTA from '../components/CTA';
 
+/**
+ * The NotFound page component.
+ *
+ * @returns {JSX.Element} The rendered NotFound page content.
+ */
 const NotFound = () => {
   return (
     <div className="h-full flex flex-col justify-center gap-10 items-center">

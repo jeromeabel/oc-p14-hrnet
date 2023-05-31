@@ -1,5 +1,20 @@
+/**
+ * Employee schema definition using Zod.
+ * @typedef {Object} EmployeeType - Type definition inferred from the employeeSchema.
+ * @property {string} firstName - The first name of the employee. Must contain only letters.
+ * @property {string} lastName - The last name of the employee. Must contain only letters.
+ * @property {Date} dateOfBirth - The date of birth of the employee. Must be in the past and the employee must be 18 years or older.
+ * @property {Date} startDate - The start date of the employee. Must be in the past.
+ * @property {string} street - The street address of the employee. Must be between 5 and 100 characters.
+ * @property {string} city - The city of residence of the employee. Must be between 2 and 100 characters.
+ * @property {string} state - The state of residence of the employee. Must be between 2 and 80 characters.
+ * @property {number} zipCode - The zip code of the employee's residence (USA). Must be a 5-digit number between 501 and 99950.
+ * @property {string} department - The department of the employee. Must be between 2 and 80 characters.
+ */
+
 import { z } from 'zod';
 
+// Zod schema
 export const employeeSchema = z.object({
   firstName: z
     .string()
@@ -46,5 +61,6 @@ export const employeeSchema = z.object({
   department: z.string().min(2).max(80),
 });
 
+// Exports
 export type EmployeeType = z.infer<typeof employeeSchema>;
 export type EmployeesType = EmployeeType[];

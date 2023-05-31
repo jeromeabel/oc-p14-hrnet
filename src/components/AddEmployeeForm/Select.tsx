@@ -1,27 +1,52 @@
+/**
+ * Select component for rendering a select field with label and error message.
+ *
+ * @module Select
+ *
+ * Usage:
+ * <Select {...register('department')} label="Department" error={errors.department?.message} options={departments} />
+ */
+
 import React from 'react';
+
+/**
+ * Option type for defining the options of the select field.
+ *
+ * @typedef {Object} Option
+ * @property {string} value - The value of the option.
+ * @property {string} label - The label text for the option.
+ */
 
 type Option = {
   value: string;
   label: string;
 };
 
-/*
-Usage: 
-<Select
-  {...register('department')}
-  label="Department"
-  error={errors.department?.message}
-  options={departments}
-/>*/
-
-interface SelectProps {
+/**
+ * Props for the Select component.
+ *
+ * @typedef {Object} SelectProps
+ * @property {Option[]} options - The options for the select field.
+ * @property {string} [error] - The error message to display for the select field.
+ * @property {string} name - The name attribute of the select field.
+ * @property {string} label - The label text for the select field.
+ * @property {boolean} [required] - Specifies if the select field is required. Default is true.
+ */
+type SelectProps = {
   options: Option[];
   error?: string;
   name: string;
   label: string;
   required?: boolean;
-}
+};
 
+/**
+ * Select component for rendering a select field with label and error message.
+ *
+ * @param {SelectProps} props - The component props.
+ * @param {React.Ref<HTMLSelectElement>} ref - The ref for the select field.
+ * @returns {JSX.Element} The rendered Select component.
+ */
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ options, error, name, label, required = true, ...rest }, ref) => (
     <div className="flex flex-col gap-1">

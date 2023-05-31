@@ -1,3 +1,7 @@
+/* 
+Store Headers for Table component listing employees 
+*/
+
 import { EmployeeHeadersType } from '../types';
 
 export const headers: EmployeeHeadersType = [

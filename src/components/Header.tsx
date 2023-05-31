@@ -1,6 +1,17 @@
+/**
+ * Header component for displaying the header navigation bar.
+ *
+ * @module Header
+ */
+
 import { NavLink, Link } from 'react-router-dom';
 import logo from '/logo.svg';
 
+/**
+ * Header component for displaying the header navigation bar.
+ *
+ * @returns {JSX.Element} The rendered Header component.
+ */
 const Header = () => {
   return (
     <header className="py-8 shadow-md">

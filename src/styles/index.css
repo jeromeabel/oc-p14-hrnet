@@ -1,8 +1,17 @@
+/* 
+Tailwind setup
+Some additional rules are stored in "tailwind.config.js", like colors, font and centering containers
+*/
+
+/* Import Noto font */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+/* Tailwind base */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Ddditional rules for common selectors */
 @layer base {
   h1,
   h2,
@@ -31,18 +40,9 @@
   h6 {
     @apply text-base;
   }
-  td {
-    @apply py-4;
-  }
-  thead th {
-    @apply text-start;
-  }
-  tr {
-    @apply border-b;
-  }
 }
 
-/* Custom animation */
+/* Custom animations : used for the Modal component */
 .animate-opacity {
   animation: animOpacity 450ms ease-in-out both;
 }

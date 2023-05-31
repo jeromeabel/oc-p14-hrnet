@@ -1,3 +1,7 @@
+/* 
+Store United States
+*/
+
 import { OptionsType } from '../types';
 
 export const states: OptionsType = [

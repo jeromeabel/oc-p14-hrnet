@@ -1,7 +1,11 @@
-// Some mock data
+/* 
+Store employees data as a mock 
+*/
 
+// Type
 import { EmployeesType } from '../types';
 
+// Define the employee data as an array of objects
 export const employees: EmployeesType = [
   {
     firstName: 'John',

@@ -1,9 +1,24 @@
+/**
+ * Modal component for displaying a modal dialog.
+ *
+ * @module Modal
+ */
+
+/**
+ * Props for the Modal component.
+ */
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
 };
 
+/**
+ * Modal component for displaying a modal dialog.
+ *
+ * @param {ModalProps} props - The component props.
+ * @returns {JSX.Element} The rendered Modal component.
+ */
 const Modal = ({ isOpen = false, onClose, children }: ModalProps) => {
   return (
     <div

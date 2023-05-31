@@ -1,3 +1,7 @@
+/* 
+Store Departments for employees data
+*/
+
 import { OptionsType } from '../types';
 
 export const departments: OptionsType = [
