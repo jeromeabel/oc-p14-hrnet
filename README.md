@@ -1,11 +1,11 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18.16-green)](https://nodejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-4.3-yellow)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.2-blue)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-18.2-blueviolet)](https://reactjs.org/)
 [![React Router](https://img.shields.io/badge/React_Router-6.11-orange)](https://reactrouter.com/)
 [![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7.43-red)](https://react-hook-form.com/)
 [![Zod](https://img.shields.io/badge/Zod-3.21-lightgrey)](https://github.com/colinhacks/zod)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.2-blueviolet)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.2-blue)](https://tailwindcss.com/)
 
 # oc-p14-hrnet 👋
 
@@ -18,12 +18,14 @@ The main tasks:
 - [x] Convert the entire project to React
 - [x] Add a state management system
 - [x] Export a React plugin to NPM : [ja-react-table](https://www.npmjs.com/package/ja-react-table)
+- [ ] Performance report between old and new version
+- [ ] CSS
 - [ ] Unit tests and manual tests
-- [ ] Performance report between old and new version
 
 ## ✨ Demo
 
-- [jeromeabel.github.io/oc-p14-hrnet](https://jeromeabel.github.io/oc-p14-hrnet/)
+- Github: [jeromeabel.github.io/oc-p14-hrnet](https://jeromeabel.github.io/oc-p14-hrnet/)
+- For Lighthouse audit, we need another type of web hosting, like Apache server: [jeromeabel.net/oc-p14-hrnet](https://jeromeabel.net/oc-p14-hrnet)
 
 ![oc-p14-hrnet screen](screen.png)
 
