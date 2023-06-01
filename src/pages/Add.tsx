@@ -56,7 +56,7 @@ const Add = () => {
 
   return (
     <>
-      <h1>Add a new employee</h1>
+      <h1 className="text-5xl">Add a new employee</h1>
       <div className="w-[500px] mx-auto">
         <AddEmployeeForm onSubmit={handleFormSubmit} />
       </div>

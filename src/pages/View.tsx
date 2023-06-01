@@ -26,7 +26,7 @@ const View = () => {
   const { employees } = useEmployeesContext();
   return (
     <div>
-      <h1 className="mb-8">Current employees</h1>
+      <h1 className="mb-8 text-5xl">Current employees</h1>
       <Table<EmployeeType> headers={headers} items={employees} />
     </div>
   );

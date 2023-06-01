@@ -3,6 +3,11 @@ Tailwind setup
 Some additional rules are stored in "tailwind.config.js", like colors, font and centering containers
 */
 
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* noto-serif-regular - latin */
 @font-face {
   font-display: swap;
@@ -13,12 +18,7 @@ Some additional rules are stored in "tailwind.config.js", like colors, font and 
     url('../fonts/noto-serif-v21-latin-regular.ttf') format('truetype');
 }
 
-/* Tailwind base */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Ddditional rules for common selectors */
+/* Adding base styles : rules for common selectors */
 @layer base {
   h1,
   h2,
@@ -29,51 +29,32 @@ Some additional rules are stored in "tailwind.config.js", like colors, font and 
     @apply font-serif;
     @apply text-heading;
   }
-  h1 {
-    @apply text-5xl;
-  }
-  h2 {
-    @apply text-4xl;
-  }
-  h3 {
-    @apply text-3xl;
-  }
-  h4 {
-    @apply text-2xl;
-  }
-  h5 {
-    @apply text-xl;
-  }
-  h6 {
-    @apply text-base;
-  }
-}
-
-/* Custom animations : used for the Modal component */
-.animate-opacity {
-  animation: animOpacity 450ms ease-in-out both;
-}
-
-.animate-y {
-  animation: animY 400ms 50ms ease-in-out both;
-}
-
-@keyframes animOpacity {
-  from {
-    opacity: 0;
+  /* Custom animations : used for the Modal component */
+  .animate-opacity {
+    animation: animOpacity 450ms ease-in-out both;
   }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes animY {
-  from {
-    transform: translateY(-50px);
+  .animate-y {
+    animation: animY 400ms 50ms ease-in-out both;
   }
 
-  to {
-    transform: translateY(0);
+  @keyframes animOpacity {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes animY {
+    from {
+      transform: translateY(-50px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
   }
 }

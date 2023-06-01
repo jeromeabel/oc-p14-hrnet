@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="h-full flex flex-col-reverse justify-center lg:justify-between lg:flex-row">
       <div>
-        <h1>Welcome</h1>
+        <h1 className="text-5xl">Welcome</h1>
         <p className="text-3xl py-4">
           HRnet is used in our compagny to manage Employees records.
         </p>
@@ -35,6 +35,7 @@ const Home = () => {
           alt="Wealth Health Logo"
           width={180}
           height={180}
+          loading="lazy"
         />
       </div>
     </div>
