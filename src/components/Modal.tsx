@@ -16,9 +16,13 @@ type ModalProps = {
 /**
  * Modal component for displaying a modal dialog.
  *
- * @param {ModalProps} props - The component props.
+ * @param {Object} props - The component props.
+ * @param {boolean} props.isOpen - State of the Modal
+ * @param {Function} props.onClose - Send click event to parent component
+ * @param {React.ReactNode} props.children - React children
  * @returns {JSX.Element} The rendered Modal component.
  */
+
 const Modal = ({ isOpen = false, onClose, children }: ModalProps) => {
   return (
     <div

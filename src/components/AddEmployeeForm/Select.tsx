@@ -3,8 +3,6 @@
  *
  * @module Select
  *
- * Usage:
- * <Select {...register('department')} label="Department" error={errors.department?.message} options={departments} />
  */
 
 import React from 'react';

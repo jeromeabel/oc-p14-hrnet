@@ -1,22 +1,10 @@
 # PROJECT
 
-**WealthHealth** is a large financial company that uses an in-house employee management application: **HRnet**.
-My goal is to update HRnet and convert it to React.
-
-## Stack
-
-- Vite
-- React
-- TS
-- Tailwind
-- React-Hook-Form
-- Zod
-
 ## TASKS
 
-- [ ] Convert the entire project to React
+- [x] Convert the entire project to React
 
-  - [x] New project : pnpm create vite . (react+ts)
+  - [x] New project : pnpm create vite app-test-npm --template react-ts
   - [x] Palette : #93AD18, #5a7003, #fcfdfa, #0C0F06, #690ABD, #420174 : colorpicker + coolors.co
   - [x] Logo HRnet + Noto Serif
   - [x] Add React router and basic routing : layout, home, error404
@@ -47,23 +35,20 @@ My goal is to update HRnet and convert it to React.
   - [x] Error Page
   - [x] Add a state management system : useContext
 
-- [ ] Unit tests and manual tests
-- [ ] Convert one JQuery plugins to React. The other in React or Library.
-  - [ ] Guidelines only the UI code. Functional programming. Comments.
+- [x] Convert one JQuery plugins to React. The other in React or Library.
+  - [x] Guidelines only the UI code. Functional programming. Comments.
   - [ ] [date picker](https://github.com/xdan/datetimepicker) : html
   - [x] [modal](https://github.com/kylefox/jquery-modal)
   - [x] [select menu](https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js)
   - [x] [Data table](https://github.com/DataTables/DataTables)
-- [ ] Export NPM
-- [ ] Performance tests with Lighthouse
-
-  - [ ] Test the older version
-  - [ ] Build and test the new one
-  - [ ] Post the React component on npm as a package
-
+- [x] Performance tests with Lighthouse
+  - [x] Test the older version
+  - [x] Build and test the new one
+- [x] Post the React component on npm as a package https://www.npmjs.com/package/ja-react-table
+- [ ] Unit tests and manual tests
 - [ ] Deliverables
 
-## Journey
+## ⚔️ Journey
 
 (issues with tailwind+formik+yup... = to React-Hook-Form + Zod)
 Issues Types... Workflow with third party
@@ -164,6 +149,38 @@ OLD TABLE DATA
 //import { EmployeeType, EmployeeHeaderType } from '../types';
 // import TableData from '../components/TableData/TableData';
 // <TableData<EmployeeType, EmployeeHeaderType> data={employees} headers={headers} />
+
+https://www.copycat.dev/blog/react-lazy/
+https://leanylabs.com/blog/react-pagespeed-optimizations/
+
+- Problem Tailwind + React Lazy loading
+  - juste avec les font-size:inherit qui écrase les règles @apply text-5xl
+  - https://github.com/tailwindlabs/tailwindcss/discussions/8521
+  - https://github.com/tailwindlabs/tailwindcss/issues/1460
+- Environment variables ok, mais pas dans viteconfig.js,: ne marche pas ?
+  - https://main.vitejs.dev/config/#using-environment-variables-in-config
+  - solution avec `export PUBLIC_URL=https://<mysite>/<repo>/ tsc && vite build ...`
+- Warning with date and input date avec zod/react-hook-form:
+
+  - The specified value "Tue Jan 01 1980 01:00:00 GMT+0100 (heure normale d\u2019Europe centrale)" does not conform to the required format, "yyyy-MM-dd".
+
+CHROME sans extensions activées!
+
+- Build react app for audit .... Issue with routing react-router for /add /view urls === APACHE SERVER + build + htaccess
+- ou alors avec HashRouter ?? mais le plus simple est de déployer sur un service comme Netlify ou Vercel
+
+- Jsdoc : > oc-p14-hrnet@0.0.0 docs > jsdoc -c jsdoc.conf.json. ERROR: Unable to parse
+
+- vite typescript setup for npm ppublish my component!!!!!!
+
+sortkey keyofItem
+
+- throw Error err.message type dans le try catch
+
+- With button state of the sort (TableHeadCell). Too much time!
+- With Sort data, with types like always ...
+
+- date with zop + input type as date
 
 ## Optimization
 

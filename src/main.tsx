@@ -3,7 +3,7 @@
  *
  * Imports necessary dependencies and sets up the root component of the application.
  *
- * @module index
+ * @module main
  */
 
 import React from 'react';

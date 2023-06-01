@@ -3,8 +3,6 @@
  *
  * @module Input
  *
- * Usage:
- * <Input {...register('firstName')} label="First name" error={errors.firstName?.message} />
  */
 
 import React from 'react';

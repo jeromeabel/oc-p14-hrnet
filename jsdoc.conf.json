@@ -1,39 +1,25 @@
 {
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
   "source": {
     "include": ["src"],
-    "exclude": ["node_modules", "dist"],
-    "includePattern": ".+\\.[jt]sx?$"
+    "includePattern": "\\.(jsx|js|ts|tsx)$",
+    "excludePattern": "(^|\\/|\\\\)_"
   },
-  "plugins": ["plugins/markdown"],
-  "opts": {
-    "recurse": true,
-    "destination": "docs",
-    "template": "node_modules/@jsdoc/default"
-  },
+  "plugins": [
+    "plugins/markdown",
+    "better-docs/component",
+    "better-docs/typescript"
+  ],
   "templates": {
-    "cleverLinks": false,
-    "monospaceLinks": false,
-    "default": {
-      "outputSourceFiles": true,
-      "includeDate": false,
-      "useLongnameInNav": false
+    "better-docs": {
+      "name": "oc-p14-hrnet"
     }
   },
-  "typescript": {
-    "moduleRoot": "src",
-    "includeDeclarations": true,
-    "excludePrivate": true,
-    "excludeProtected": true,
-    "excludeExternals": true,
-    "excludeNotExported": true,
-    "preferType": {
-      "Boolean": "boolean",
-      "Number": "number",
-      "String": "string",
-      "Object": "object",
-      "Array": "array",
-      "Function": "function",
-      "Symbol": "symbol"
-    }
+  "opts": {
+    "destination": "docs",
+    "recurse": true
   }
 }
