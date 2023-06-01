@@ -10,10 +10,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
+// Main router
 import App from './App.tsx';
 
 // Context state management
 import { EmployeesProvider } from './context/EmployeesContext.tsx';
+
+// Loading
+import Loading from './components/Loading.tsx';
 
 // Tailwind setup
 import './styles/index.css';
@@ -27,7 +31,7 @@ import './styles/index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <EmployeesProvider>
-      <RouterProvider router={App} />
+      <RouterProvider router={App} fallbackElement={<Loading />} />
     </EmployeesProvider>
   </React.StrictMode>
 );

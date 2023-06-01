@@ -7,15 +7,17 @@
  */
 
 import { createBrowserRouter } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import Loading from './components/Loading';
 
 // Shared Layout
 import Layout from './pages/Layout';
 
 // Pages
 import Home from './pages/Home';
-import Add from './pages/Add';
-import View from './pages/View';
-import NotFound from './pages/NotFound';
+const AddLazy = lazy(() => import('./pages/Add'));
+const ViewLazy = lazy(() => import('./pages/View'));
+const NotFoundLazy = lazy(() => import('./pages/NotFound'));
 
 /**
  * The main application component.
@@ -30,9 +32,30 @@ const App = createBrowserRouter(
       element: <Layout />,
       children: [
         { index: true, element: <Home /> },
-        { path: 'add', element: <Add /> },
-        { path: 'view', element: <View /> },
-        { path: '*', element: <NotFound /> },
+        {
+          path: 'add',
+          element: (
+            <Suspense fallback={<Loading />}>
+              <AddLazy />
+            </Suspense>
+          ),
+        },
+        {
+          path: 'view',
+          element: (
+            <Suspense fallback={<Loading />}>
+              <ViewLazy />
+            </Suspense>
+          ),
+        },
+        {
+          path: '*',
+          element: (
+            <Suspense fallback={<Loading />}>
+              <NotFoundLazy />
+            </Suspense>
+          ),
+        },
       ],
     },
   ],
