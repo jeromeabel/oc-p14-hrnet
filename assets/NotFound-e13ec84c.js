@@ -1,1 +1,0 @@
-import{j as e,C as s}from"./index-76192548.js";const n=()=>e.jsxs("div",{className:"h-full flex flex-col justify-center gap-10 items-center",children:[e.jsxs("h1",{className:"text-5xl",children:[e.jsx("span",{className:"inline-block animate-bounce",children:"🕴️"})," Page not found"]}),e.jsx(s,{title:"Return to the home page",href:"/"})]});export{n as default};
