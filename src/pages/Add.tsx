@@ -56,17 +56,15 @@ const Add = () => {
 
   return (
     <>
-      <h1 className="text-5xl">Add a new employee</h1>
-      <div className="w-[500px] mx-auto">
-        <AddEmployeeForm onSubmit={handleFormSubmit} />
-      </div>
+      <h1 className="text-4xl">Add a new employee</h1>
+      <AddEmployeeForm onSubmit={handleFormSubmit} />
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         {isEmployeeNew ? (
           <>
-            <h2>✅ Data submitted</h2>
+            <h2 className="text-4xl border-b py-4">✅ Success</h2>
             <p>
-              The new employee{' '}
+              Data submitted. The new employee{' '}
               <b>
                 {newEmployee?.firstName} {newEmployee?.lastName}
               </b>{' '}
@@ -75,8 +73,8 @@ const Add = () => {
           </>
         ) : (
           <>
-            <h2 className="text-red-500">⚠️ Data not submitted</h2>
-            <p>The employee is already in the data base.</p>
+            <h2 className="text-red-500 text-4xl border-b py-4">⚠️ Error</h2>
+            <p>Data not submitted. The employee is already in the data base.</p>
           </>
         )}
       </Modal>

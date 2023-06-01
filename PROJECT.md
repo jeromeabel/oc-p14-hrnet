@@ -155,8 +155,9 @@ https://leanylabs.com/blog/react-pagespeed-optimizations/
 
 - Problem Tailwind + React Lazy loading
   - juste avec les font-size:inherit qui écrase les règles @apply text-5xl
-  - https://github.com/tailwindlabs/tailwindcss/discussions/8521
-  - https://github.com/tailwindlabs/tailwindcss/issues/1460
+- problem avec background input type=submit, ça marche sans lazy. Avec lazy ça marche avec 'button type=submit!!!'
+- https://github.com/tailwindlabs/tailwindcss/discussions/8521
+- https://github.com/tailwindlabs/tailwindcss/issues/1460
 - Environment variables ok, mais pas dans viteconfig.js,: ne marche pas ?
   - https://main.vitejs.dev/config/#using-environment-variables-in-config
   - solution avec `export PUBLIC_URL=https://<mysite>/<repo>/ tsc && vite build ...`
@@ -181,6 +182,17 @@ sortkey keyofItem
 - With Sort data, with types like always ...
 
 - date with zop + input type as date
+
+JSODC
+
+- jsdoc setup :
+  - ERROR: Unable to parse AddEmployeeForm.tsx: Missing semicolon. (30:4) ??
+  - - add @module : every file that exports something, because jsdoc does not generate modules based on path properly:
+  - ?Move module definition comment below imports and type definitions:
+  - include pattern ?
+  - https://gist.github.com/DeruiDENG/074b15de1ebc23ee8d307c14198c1231
+  - https://tomaszs2.medium.com/how-to-generate-jsdoc-documentation-for-a-typescript-react-project-694c66f0496a
+  - https://marketsplash.com/tutorials/typescript/typescript-how-to-add-inline-documentation/
 
 ## Optimization
 

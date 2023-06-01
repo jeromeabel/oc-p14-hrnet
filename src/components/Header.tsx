@@ -19,7 +19,7 @@ const Header = () => {
         <Link to="/">
           <img src={logo} alt="HRnet Logo" width={117} height={29} />
         </Link>
-        <ul className="flex gap-8">
+        <ul className="flex gap-8 text-xl">
           <li>
             <NavLink
               to="/add"

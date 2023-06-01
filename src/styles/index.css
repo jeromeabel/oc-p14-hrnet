@@ -29,6 +29,7 @@ Some additional rules are stored in "tailwind.config.js", like colors, font and 
     @apply font-serif;
     @apply text-heading;
   }
+
   /* Custom animations : used for the Modal component */
   .animate-opacity {
     animation: animOpacity 450ms ease-in-out both;

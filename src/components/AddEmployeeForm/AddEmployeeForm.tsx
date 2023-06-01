@@ -59,7 +59,6 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
   } = useForm<EmployeeType>({
     resolver: zodResolver(employeeSchema),
     mode: 'all',
-    // defaultValues: voidEmployee, // Used for testing
   });
 
   useEffect(() => {
@@ -67,36 +66,44 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
   }, [isSubmitSuccessful, reset]);
 
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="my-8 flex flex-col gap-4"
-      >
-        <Input
-          {...register('firstName')}
-          label="First name"
-          error={errors.firstName?.message}
-        />
-        <Input
-          {...register('lastName')}
-          label="Last name"
-          error={errors.lastName?.message}
-        />
-        <Input
-          {...register('dateOfBirth', { valueAsDate: true })}
-          type="date"
-          label="Date of birth"
-          error={errors.dateOfBirth?.message}
-        />
-        <Input
-          {...register('startDate', { valueAsDate: true })}
-          type="date"
-          label="Start date"
-          error={errors.startDate?.message}
-        />
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-4 p-4 my-8 lg:p-0 max-w-[1000px]"
+    >
+      <div className="flex flex-col flex-wrap gap-2">
+        <div className="flex-1 grid grid-cols-1 m-w-[500px] xl:grid-cols-2 gap-y-2 gap-x-4">
+          <Input
+            {...register('firstName')}
+            label="First name"
+            error={errors.firstName?.message}
+          />
+          <Input
+            {...register('lastName')}
+            label="Last name"
+            error={errors.lastName?.message}
+          />
+          <Input
+            {...register('dateOfBirth', { valueAsDate: true })}
+            type="date"
+            label="Date of birth"
+            error={errors.dateOfBirth?.message}
+          />
+          <Input
+            {...register('startDate', { valueAsDate: true })}
+            type="date"
+            label="Start date"
+            error={errors.startDate?.message}
+          />
+          <Select
+            {...register('department')}
+            label="Department"
+            error={errors.department?.message}
+            options={departments}
+          />
+        </div>
 
-        <fieldset className="p-4 border">
-          <legend>Address</legend>
+        <fieldset className="border-t py-4 flex-1 grid grid-cols-2 gap-y-2 gap-x-4">
+          <legend className="text-gray-500 text-xl mx-4 px-4">Address</legend>
           <Input
             {...register('street')}
             label="Street"
@@ -120,21 +127,14 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
             error={errors.zipCode?.message}
           />
         </fieldset>
+      </div>
 
-        <Select
-          {...register('department')}
-          label="Department"
-          error={errors.department?.message}
-          options={departments}
-        />
-
-        <input
-          className="p-3 rounded bg-secondary hover:bg-primary text-white text-xl cursor-pointer"
-          type="submit"
-          disabled={isSubmitting}
-        />
-      </form>
-    </div>
+      <div className="text-primary border border-primary hover:bg-primary hover:text-white text-xl rounded-full w-[150px]">
+        <button className="w-full  p-3" type="submit" disabled={isSubmitting}>
+          Send
+        </button>
+      </div>
+    </form>
   );
 };
 

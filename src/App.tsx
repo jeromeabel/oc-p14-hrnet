@@ -15,6 +15,8 @@ import Layout from './pages/Layout';
 
 // Pages
 import Home from './pages/Home';
+import Add from './pages/Add';
+
 const AddLazy = lazy(() => import('./pages/Add'));
 const ViewLazy = lazy(() => import('./pages/View'));
 const NotFoundLazy = lazy(() => import('./pages/NotFound'));
@@ -35,6 +37,7 @@ const App = createBrowserRouter(
         {
           path: 'add',
           element: (
+            // <Add />
             <Suspense fallback={<Loading />}>
               <AddLazy />
             </Suspense>
