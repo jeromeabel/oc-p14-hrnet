@@ -17,8 +17,6 @@ export default {
         heading: '#6d840d',
         white: '#fcfdfa',
         black: '#0C0F06',
-        highlight: '#690ABD',
-        'highlight-darken': '#420174',
       },
     },
   },
