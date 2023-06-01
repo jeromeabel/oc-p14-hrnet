@@ -1,0 +1,39 @@
+{
+  "source": {
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"],
+    "includePattern": ".+\\.[jt]sx?$"
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "recurse": true,
+    "destination": "docs",
+    "template": "node_modules/@jsdoc/default"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate": false,
+      "useLongnameInNav": false
+    }
+  },
+  "typescript": {
+    "moduleRoot": "src",
+    "includeDeclarations": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeExternals": true,
+    "excludeNotExported": true,
+    "preferType": {
+      "Boolean": "boolean",
+      "Number": "number",
+      "String": "string",
+      "Object": "object",
+      "Array": "array",
+      "Function": "function",
+      "Symbol": "symbol"
+    }
+  }
+}
