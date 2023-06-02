@@ -29,9 +29,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex-1 h-full w-full relative">
+      <div className="hidden md:block flex-1 h-full w-full relative">
         <img
-          className="block h-full object-cover rounded-lg "
+          className="block h-full object-cover rounded-lg"
           src={bgImg}
           alt="Green plants on the ground from Francesco Gallarotti - unsplash"
           loading="lazy"
