@@ -56,7 +56,7 @@ const Add = () => {
 
   return (
     <>
-      <h1 className="text-4xl">Add a new employee</h1>
+      <h1 className="text-3xl lg:text-4xl">Add a new employee</h1>
       <AddEmployeeForm onSubmit={handleFormSubmit} />
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>

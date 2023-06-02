@@ -68,10 +68,10 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 p-4 my-8 lg:p-0 max-w-[1000px]"
+      className="flex flex-col gap-4 my-8 max-w-[1000px] shadow-xl border rounded p-8"
     >
       <div className="flex flex-col flex-wrap gap-2">
-        <div className="flex-1 grid grid-cols-1 m-w-[500px] xl:grid-cols-2 gap-y-2 gap-x-4">
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
           <Input
             {...register('firstName')}
             label="First name"
@@ -101,8 +101,10 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
             options={departments}
           />
         </div>
-
-        <fieldset className="border-t py-4 flex-1 grid grid-cols-2 gap-y-2 gap-x-4">
+        <fieldset
+          className="border-t border-b py-4
+        flex-1 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4"
+        >
           <legend className="text-gray-500 text-xl mx-4 px-4">Address</legend>
           <Input
             {...register('street')}
@@ -129,10 +131,12 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
         </fieldset>
       </div>
 
-      <div className="text-white bg-secondary hover:bg-primary text-xl rounded-full w-[150px]">
-        <button className="w-full  p-3" type="submit" disabled={isSubmitting}>
-          Send
-        </button>
+      <div className="flex justify-center mt-4">
+        <div className="text-white  bg-secondary hover:bg-primary text-xl rounded-full w-[150px]">
+          <button className="w-full  p-3" type="submit" disabled={isSubmitting}>
+            Send
+          </button>
+        </div>
       </div>
     </form>
   );
