@@ -129,7 +129,7 @@ const AddEmployeeForm = ({ onSubmit }: AddEmployeeFormProps) => {
         </fieldset>
       </div>
 
-      <div className="text-primary border border-primary hover:bg-primary hover:text-white text-xl rounded-full w-[150px]">
+      <div className="text-white bg-secondary hover:bg-primary text-xl rounded-full w-[150px]">
         <button className="w-full  p-3" type="submit" disabled={isSubmitting}>
           Send
         </button>

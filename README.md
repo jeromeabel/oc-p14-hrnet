@@ -18,7 +18,7 @@ The main tasks:
 - [x] Convert the entire project to React
 - [x] Add a state management system
 - [x] Export a React plugin to NPM : [ja-react-table](https://www.npmjs.com/package/ja-react-table)
-- [ ] Performance report between old and new version
+- [x] Performance report between old and new version
 - [ ] CSS
 - [ ] Unit tests and manual tests
 
@@ -28,6 +28,10 @@ The main tasks:
 - For Lighthouse audit, we need another type of web hosting, like Apache server: [jeromeabel.net/oc-p14-hrnet](https://jeromeabel.net/oc-p14-hrnet)
 
 ![oc-p14-hrnet screen](screen.png)
+
+## ✔️ Report
+
+![oc-p14-hrnet report lighthouse](report.png)
 
 ## 🚨 Prerequisites
 

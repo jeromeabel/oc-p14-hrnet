@@ -13,10 +13,9 @@ import Loading from './components/Loading';
 // Shared Layout
 import Layout from './pages/Layout';
 
-// Pages
-import Home from './pages/Home';
-import Add from './pages/Add';
-
+// Pages (Lazy Loading)
+// import Home from './pages/Home';
+const HomeLazy = lazy(() => import('./pages/Home'));
 const AddLazy = lazy(() => import('./pages/Add'));
 const ViewLazy = lazy(() => import('./pages/View'));
 const NotFoundLazy = lazy(() => import('./pages/NotFound'));
@@ -33,11 +32,17 @@ const App = createBrowserRouter(
       path: '/',
       element: <Layout />,
       children: [
-        { index: true, element: <Home /> },
+        {
+          index: true,
+          element: (
+            <Suspense fallback={<Loading />}>
+              <HomeLazy />
+            </Suspense>
+          ),
+        },
         {
           path: 'add',
           element: (
-            // <Add />
             <Suspense fallback={<Loading />}>
               <AddLazy />
             </Suspense>

@@ -48,6 +48,114 @@
 - [ ] Unit tests and manual tests
 - [ ] Deliverables
 
+## Reports - resume
+
+Les tests sont effectués avec la configuration suivante :
+
+- Mobile
+- Aucune limitation réseau (Sensiblement identiques)
+- Chrome désactivation de toutes ls extension
+- Outils de diagnostic: Chrome extension Lighthouse (LH), https://validator.w3.org/ (html) + https://jigsaw.w3.org/css-validator/ (css)
+- Sur serveur Apache : activation du cache et de la compression gzip, et résolution du mode navigabilité de Lighthouse (htaccess)
+- Nouvelle version : Vite (minify), React, avec le module vite-plugin-compression, Lazy Loading (code splitting), lazy image, font css, responsive tailles texte/buttons, optimize svg, contrast, meta description, tailwind minify
+- Deux pages: Add an employee, View employees. Un peu plus de différences sur Add an employee
+
+Nouvelle version (Add):
+
+- Performance : 99%
+- Accessibilité : 100%
+- Bonnes pratiques : 100%
+- SEO : 100%
+
+dist/index.html 0.66 kB │ gzip: 0.37 kB
+dist/assets/noto-serif-v21-latin-regular-25475d82.woff2 23.95 kB
+dist/assets/View-5c5c6d90.css 7.58 kB │ gzip: 2.29 kB
+dist/assets/index-58cef8be.css 11.70 kB │ gzip: 3.30 kB
+dist/assets/CTA-1a66bc4e.js 0.21 kB │ gzip: 0.19 kB
+dist/assets/NotFound-cfd9260f.js 0.40 kB │ gzip: 0.29 kB
+dist/assets/Home-7049606a.js 0.78 kB │ gzip: 0.44 kB
+dist/assets/View-5121776a.js 6.15 kB │ gzip: 2.67 kB
+dist/assets/Add-17a6e8ec.js 82.30 kB │ gzip: 23.38 kB
+dist/assets/index-2f8f5a03.js 198.85 kB │ gzip: 64.62 kB
+
+Ancienne version (Add):
+
+- Performance : 92% - FCP/LCP 2.7s
+  - Ressources qui bloquent le rendu : jquery.min.js (1.1s), jquery.ui.js(0.9s)
+  - Réduisez les ressources JavaScript
+- Accessibilité : 95%
+  - Aria ui-selectmenu-button
+  - Pas lang attribute
+- Bonnes pratiques : 83%
+  - La page n'a pas d'attribut doctype HTML, ce qui déclenche le mode quirks
+  - La déclaration de charset est manquante ou intervient trop tard dans le code HTML
+- SEO : 67%
+  - pas de meta viewport
+  - Les tailles de police utilisées dans le document ne sont pas lisibles
+  - Les éléments tactiles ne sont pas dimensionnés correctement
+  - pas d'attribut "meta description"
+
+app.css 1kB
+app.js 6kB
+employee-list.html 1kB
+employee-list.js 1kB
+index.html 3kB
+jquery.datetimepicker.css 19kB
+jquery.datetimepicker.full.min.js 61kB
+README.md 1kB
+
+## Reports - details
+
+Comparer le poids
+
+- Old - Add : 92 | 95 | 83 | 67 : FCP/LCP 2.7s
+
+  - PERF:
+    - Éliminez les ressources qui bloquent le rendu : 1.87s
+      - 121,7 KiB jquery.ui.js 900ms
+      - 30.4KiB jquery.min.js 1100ms
+      - 1.8KiB jquery.modal.min.css 840ms
+    - Réduisez les ressources JavaScript inutilisées : 0.48s
+      - jquery.ui.js
+    - Réduisez la taille des ressources JavaScript : 0.19s
+    - La page n'utilise pas d'écouteurs d'événements passifs pour améliorer les performances de défilement
+    - Aucune balise <meta name="viewport"> ayant l'attribut width ou initial-scale n'est configurée
+  - ACC:
+    - Les champs de saisie ARIA n'ont pas de noms accessibles : ui-selectmenu-button
+    - L'élément <html> n'a pas d'attribut [lang]
+  - BONNES PRATIQUES
+    - La page n'a pas d'attribut doctype HTML, ce qui déclenche le mode quirks
+    - La déclaration de charset est manquante ou intervient trop tard dans le code HTML
+  - SEO
+    - pas de meta viewport
+    - Les tailles de police utilisées dans le document ne sont pas lisibles
+    - Les éléments tactiles ne sont pas dimensionnés correctement
+    - Le document ne contient pas d'attribut "meta description"
+
+- Old - View : 97 | 98 | 75 | 58 : FCP/LCP 2.1s
+
+  - PERF. Éliminez les ressources qui bloquent le rendu : 1.18s
+    - 30.9KiB jquery.min.js 1090ms
+    - 2.1KiB jquery.dataTables.min.css 770ms
+    - 28.4KiB jquery.dataTables.min.js 300ms
+  - SEO/BONNES :
+    - pas meta viewport
+    - pas meta description
+    - pas html attribute lang
+    - pas charset
+    - Des problèmes ont été enregistrés dans le panneau Issues des outils de développement Chrome
+      - dataTable css/js + images flèches
+      - pas de DOCTYPE Page layout may be unexpected due to Quirks Mode
+      - A form field element should have an id or name attribute : input type=search
+    - Les tailles de police utilisées dans le document ne sont pas lisibles
+    - Les éléments tactiles ne sont pas dimensionnés correctement
+    - Les liens ne peuvent pas être explorés : pas de href sur les boutons a de la pagination
+  - VALIDATOR
+    - Error de tag: <h1>Current Employees</h3>
+
+- New - Add : 99 | 100 | 100 | 100 : FCP/LCP 1.4s
+- New - View : 100 | 100 | 100 | 100 : FCP/LCP 1.4s
+
 ## ⚔️ Journey
 
 (issues with tailwind+formik+yup... = to React-Hook-Form + Zod)
