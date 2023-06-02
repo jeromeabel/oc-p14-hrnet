@@ -18,12 +18,12 @@
     - [x] Footer
     - [x] Content : two CTA links create + view
   - [x] Add routing to create and view pages
-  - [ ] Create Page
+  - [x] Create Page
     - [x] use React-Hook-Form and Zod schema
     - [x] Customized Input component
     - [x] Customized Select component
     - [x] Modal window
-    - [ ] Datepicker component
+    - [x] Datepicker component
   - [x] Employees list Page : Table Component
     - [x] Display headers
     - [x] Display rows
@@ -45,7 +45,7 @@
   - [x] Test the older version
   - [x] Build and test the new one
 - [x] Post the React component on npm as a package https://www.npmjs.com/package/ja-react-table
-- [ ] Unit tests and manual tests
+- [x] Unit tests and manual tests
 - [ ] Deliverables
 
 ## Reports - resume

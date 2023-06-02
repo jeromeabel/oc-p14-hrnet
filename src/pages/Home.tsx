@@ -7,7 +7,7 @@
  */
 
 import CTA from '../components/CTA';
-import companyImg from '/company.svg';
+import bgImg from '../assets/bg.jpg';
 
 /**
  * The Home page component.
@@ -16,25 +16,24 @@ import companyImg from '/company.svg';
  */
 const Home = () => {
   return (
-    <div className="h-full flex flex-col-reverse justify-center lg:justify-between lg:flex-row">
-      <div>
-        <h1 className="text-5xl">Welcome</h1>
-        <p className="text-3xl py-4">
-          HRnet is used in our compagny to manage Employees records.
-        </p>
-        <div className="flex gap-8 py-8">
+    <div className="flex items-center h-full gap-16">
+      <div className="w-1/2 lg:w-1/3 flex flex-col justify-center gap-4">
+        <h1 className="text-4xl lg:text-5xl">Welcome</h1>
+        <h2 className="text-3xl lg:text-4xl text-primary">
+          HRnet is the app to manage employees records.
+        </h2>
+        <p className="text-xl mt-2">Select your action</p>
+        <div className="flex gap-4 lg:gap-8 mt-8 lg:mt-16">
           <CTA title="Add employee" href="/add" />
           <CTA title="View employees" href="/view" />
         </div>
       </div>
 
-      <div className="lg:w-full lg:h-full grid place-items-center">
+      <div className="flex-1 h-full w-full">
         <img
-          className="lg:w-1/2"
-          src={companyImg}
-          alt="Wealth Health Logo"
-          width={180}
-          height={180}
+          className="block h-full object-cover rounded-lg"
+          src={bgImg}
+          alt="Green plants background"
           loading="lazy"
         />
       </div>

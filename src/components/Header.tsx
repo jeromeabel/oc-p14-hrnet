@@ -5,7 +5,6 @@
  */
 
 import { NavLink, Link } from 'react-router-dom';
-import logo from '/logo.svg';
 
 /**
  * Header component for displaying the header navigation bar.
@@ -14,10 +13,12 @@ import logo from '/logo.svg';
  */
 const Header = () => {
   return (
-    <header className="py-8 shadow-md">
-      <nav className="flex justify-between container">
+    <header className="py-6 shadow-md">
+      <nav className="flex justify-between items-center container">
         <Link to="/">
-          <img src={logo} alt="HRnet Logo" width={117} height={29} />
+          <h1 className="text-5xl font-bold text-primary">
+            HR<span className="text-heading">net</span>
+          </h1>
         </Link>
         <ul className="flex gap-8 text-xl">
           <li>

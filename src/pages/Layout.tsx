@@ -19,10 +19,10 @@ const Layout = () => {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <main className="flex-grow">
-        <div className="container py-8 h-full">
-          <Outlet />
-        </div>
+      <main className="flex-grow container py-8">
+        {/* <div className="container h-full"> */}
+        <Outlet />
+        {/* </div> */}
       </main>
       <Footer />
     </div>
