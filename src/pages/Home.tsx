@@ -29,13 +29,16 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex-1 h-full w-full">
+      <div className="flex-1 h-full w-full relative">
         <img
-          className="block h-full object-cover rounded-lg"
+          className="block h-full object-cover rounded-lg "
           src={bgImg}
-          alt="Green plants background"
+          alt="Green plants on the ground from Francesco Gallarotti - unsplash"
           loading="lazy"
         />
+        <p className="absolute text-sm lg:text-base bottom-0 text-black w-full py-2 text-right px-4 lg:px-8 rounded-lg-br bg-opacity-80 lg:bg-opacity-60 bg-white">
+          @Francesco Gallarotti - unsplash
+        </p>
       </div>
     </div>
   );
