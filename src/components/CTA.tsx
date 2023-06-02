@@ -25,7 +25,7 @@ const CTA = ({ title, href }: CTAProps) => {
   return (
     <NavLink
       to={href}
-      className="bg-secondary py-3 px-5 rounded-full text-xl hover:bg-primary text-white"
+      className="bg-secondary py-3 px-5 rounded-full text-base text-center lg:text-xl hover:bg-primary text-white"
       title={title}
     >
       {title}

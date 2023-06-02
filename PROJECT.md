@@ -83,6 +83,7 @@ Ancienne version (Add):
 - Performance : 92% - FCP/LCP 2.7s
   - Ressources qui bloquent le rendu : jquery.min.js (1.1s), jquery.ui.js(0.9s)
   - Réduisez les ressources JavaScript
+  - images plus grandes que leurs tailles affichées
 - Accessibilité : 95%
   - Aria ui-selectmenu-button
   - Pas lang attribute
