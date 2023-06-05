@@ -1,3 +1,5 @@
+# oc-p14-hrnet 👋
+
 [![Node.js](https://img.shields.io/badge/Node.js-18.16-green)](https://nodejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-4.3-yellow)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
@@ -7,8 +9,6 @@
 [![Zod](https://img.shields.io/badge/Zod-3.21-lightgrey)](https://github.com/colinhacks/zod)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.2-blue)](https://tailwindcss.com/)
 
-# oc-p14-hrnet 👋
-
 This project is the n°14 of the [OpenClassrooms Front-End learning path](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react).
 
 **WealthHealth** is a large financial company that uses an in-house employee management application: **HRnet**. My main goal is to update HRnet and convert it to React. The old version uses 4 JQuery plugins : datetimepicker, jquery-modal, jquery-ui/selectmenu, DataTables.
@@ -17,10 +17,8 @@ The main tasks:
 
 - [x] Convert the entire project to React
 - [x] Add a state management system
-- [x] Export a React plugin to NPM : [ja-react-table](https://www.npmjs.com/package/ja-react-table)
+- [x] Publish a React plugin to NPM : [ja-react-table](https://www.npmjs.com/package/ja-react-table)
 - [x] Performance report between old and new version
-- [ ] CSS
-- [ ] Unit tests and manual tests
 
 ## ✨ Demo
 
