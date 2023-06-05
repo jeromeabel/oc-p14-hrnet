@@ -16,8 +16,8 @@ const Header = () => {
     <header className="py-6 shadow-md">
       <nav className="flex justify-between items-center container">
         <Link to="/">
-          <h1 className="text-5xl font-bold text-primary">
-            HR<span className="text-heading">net</span>
+          <h1 className="text-5xl font-bold">
+            HR<span className="font-extralight">net</span>
           </h1>
         </Link>
         <ul className="flex gap-8 text-xl">

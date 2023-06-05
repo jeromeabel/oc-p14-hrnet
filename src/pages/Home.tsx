@@ -19,7 +19,7 @@ const Home = () => {
     <div className="flex items-center h-full gap-16">
       <div className="w-1/2 lg:w-1/3 flex flex-col justify-center gap-4">
         <h1 className="text-4xl lg:text-5xl">Welcome</h1>
-        <h2 className="text-3xl lg:text-4xl text-primary">
+        <h2 className="text-3xl lg:text-4xl">
           HRnet is the app to manage employees records.
         </h2>
         <p className="text-xl mt-2">Select your action</p>
