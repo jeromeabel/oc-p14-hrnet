@@ -17,12 +17,9 @@ const Footer = () => {
       <div className="container flex gap-2 flex-row justify-between items-center">
         <div className="flex gap-4 items-center">
           <LogoWhite className="h-10 w-10" />
-          <p>
-            WEALTH HEALTH
-            <span className="hidden lg:inline">, all rights reserved</span>
-          </p>
+          <p>WEALTH HEALTH, all rights reserved</p>
         </div>
-        <ul className="flex flex-row min-w-fit gap-2 md:gap-4 text-sm md:text-base">
+        <ul className="hidden lg:flex flex-row min-w-fit gap-4 text-base">
           <li>Privacy</li>
           <li>Policy</li>
           <li>Terms of Service</li>

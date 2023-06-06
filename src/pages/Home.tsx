@@ -26,7 +26,7 @@ import bg1600 from '../assets/bg-1600.jpg';
  */
 const Home = () => {
   return (
-    <div className="flex items-center h-full gap-16">
+    <div className="flex items-center h-full gap-4 lg:gap-16">
       <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col justify-center gap-4">
         <h1 className="text-4xl lg:text-5xl">Welcome</h1>
         <h2 className="text-3xl lg:text-4xl">
