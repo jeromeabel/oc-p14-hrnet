@@ -1,1 +1,0 @@
-import{j as r,N as s}from"./index-a34bdd4b.js";const a=({title:e,href:t})=>r.jsx(s,{to:t,className:"bg-secondary py-2 px-3 lg:py-3 lg:px-5 rounded-full text-base text-center lg:text-xl hover:bg-primary text-white",title:e,children:e});export{a as C};
