@@ -12,11 +12,9 @@ export default {
     extend: {
       colors: {
         error: '#ff0505',
-        primary: '#93AD18',
-        secondary: '#5a7003',
-        heading: '#1F7B05' /*#677B11 #6d840d*/,
-        heading2: '#60625A',
-        heading3: '#6d840d',
+        primary: '#6ABF4E',
+        secondary: '#1F7B05',
+        heading: '#1F7B05',
         white: '#fcfdfa',
         black: '#0C0F06',
       },

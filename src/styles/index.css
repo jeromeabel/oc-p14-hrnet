@@ -14,8 +14,8 @@ Some additional rules are stored in "tailwind.config.js", like colors, font and 
   font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/noto-serif-v21-latin-regular.woff2') format('woff2'),
-    url('../fonts/noto-serif-v21-latin-regular.ttf') format('truetype');
+  src: url('../assets/noto-serif-v21-latin-regular.woff2') format('woff2'),
+    url('../assets/noto-serif-v21-latin-regular.ttf') format('truetype');
 }
 
 /* Adding base styles : rules for common selectors */

@@ -27,6 +27,8 @@ The main tasks:
 
 ![oc-p14-hrnet screen](screen.png)
 
+Credit photo: [Francesco Gallarotti](https://unsplash.com/fr/photos/ruQHpukrN7c)
+
 ## ✔️ Report
 
 ![oc-p14-hrnet report lighthouse](report.png)

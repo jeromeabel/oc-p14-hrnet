@@ -14,7 +14,6 @@ import Loading from './components/Loading';
 import Layout from './pages/Layout';
 
 // Pages (Lazy Loading)
-// import Home from './pages/Home';
 const HomeLazy = lazy(() => import('./pages/Home'));
 const AddLazy = lazy(() => import('./pages/Add'));
 const ViewLazy = lazy(() => import('./pages/View'));

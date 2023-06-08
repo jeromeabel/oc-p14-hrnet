@@ -63,7 +63,7 @@ const Add = () => {
         {isEmployeeNew ? (
           <>
             <h2 className="text-4xl border-b py-4">✅ Success</h2>
-            <p>
+            <p className="lg:text-xl">
               Data submitted. The new employee{' '}
               <b>
                 {newEmployee?.firstName} {newEmployee?.lastName}
@@ -74,7 +74,9 @@ const Add = () => {
         ) : (
           <>
             <h2 className="text-red-500 text-4xl border-b py-4">⚠️ Error</h2>
-            <p>Data not submitted. The employee is already in the data base.</p>
+            <p className="lg:text-xl">
+              Data not submitted. The employee is already in the data base.
+            </p>
           </>
         )}
       </Modal>
