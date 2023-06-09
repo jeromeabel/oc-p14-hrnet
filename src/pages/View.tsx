@@ -10,7 +10,7 @@
 import { Table } from 'ja-react-table';
 
 // Style for ja-react-table
-import '../../node_modules/ja-react-table/dist/style.css';
+import 'ja-react-table/dist/style.css';
 
 // Context and data
 import { useEmployeesContext } from '../context/EmployeesContext';

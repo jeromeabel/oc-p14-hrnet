@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.7.2
     version: 2.7.2(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
   ja-react-table:
-    specifier: ^1.0.6
-    version: 1.0.6
+    specifier: ^1.0.7
+    version: 1.0.7
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2089,8 +2089,8 @@ packages:
       istanbul-lib-report: 3.0.0
     dev: false
 
-  /ja-react-table@1.0.6:
-    resolution: {integrity: sha512-J3AGqvxrQf61/yao861OLhUeXnTQ6jsMeDAC1cX1UQxppYPRA0yisg+guSTOlmIyY3lBjH2k789VlXfKWoNRlw==}
+  /ja-react-table@1.0.7:
+    resolution: {integrity: sha512-xVUs7cYjgQizUzfMVeWjST1aMgi7IQcfVh46+u4PlOb+xf91eKGIWJ9Im0bjk3cRM3ousPxF1O91AFijjCXiEw==}
     dev: false
 
   /jiti@1.18.2:
