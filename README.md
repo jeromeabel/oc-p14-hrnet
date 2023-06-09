@@ -24,10 +24,9 @@ The main tasks:
 
 - Github: [jeromeabel.github.io/oc-p14-hrnet](https://jeromeabel.github.io/oc-p14-hrnet/)
 - For Lighthouse audit, we need another type of web hosting, like Apache server: [jeromeabel.net/oc-p14-hrnet](https://jeromeabel.net/oc-p14-hrnet)
+- Credit photo: [Francesco Gallarotti](https://unsplash.com/fr/photos/ruQHpukrN7c)
 
 ![oc-p14-hrnet screen](screen.png)
-
-Credit photo: [Francesco Gallarotti](https://unsplash.com/fr/photos/ruQHpukrN7c)
 
 ## ✔️ Report
 
