@@ -16,9 +16,6 @@ import App from './App.tsx';
 // Context state management
 import { EmployeesProvider } from './context/EmployeesContext.tsx';
 
-// Loading
-import Loading from './components/Loading.tsx';
-
 // Tailwind setup
 import './styles/index.css';
 
@@ -31,7 +28,7 @@ import './styles/index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <EmployeesProvider>
-      <RouterProvider router={App} fallbackElement={<Loading />} />
+      <RouterProvider router={App} />
     </EmployeesProvider>
   </React.StrictMode>
 );
